@@ -24,6 +24,7 @@ It's also super advanced, has lots of features, and can't easily be wrapped in a
 
 Yes, even keeping it simple there are stuff I might want to add some day, or if you want to, feel free to create a PR.
 
+- Parallelization - make it faster on huge repos.
 - Exclude lists (Not sure how I would want this to look though.. pattern - File - something else..)
 - More filetypes! I kind of just winged it for now.
 - Steal and recreate [testcases from the OWASP page](https://github.com/OWASP/SEDATED/tree/master/testing/regex_testing) to make sure the regexes work as expected!
