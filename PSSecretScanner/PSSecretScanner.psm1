@@ -5,7 +5,7 @@
     This function scans for secrets accidently exposed in one or more folder(s) or file(s).
     It requires the config.json file containing regexes and file extensions to scan.
 
-    You can select which oputput stream to use to make it behave the way you want to in a pipeline,
+    You can select which output stream to use to make it behave the way you want to in a pipeline,
     Or output the result to pipeline as an object to wrap it in your own script.
 .EXAMPLE
     PS C:\> Find-Secrets
@@ -34,7 +34,7 @@ function Find-Secret {
         [string]$OutputPreference = 'Error',
 
         # Path to the config.json file. If you change this, make sure the format of the custom one is correct.
-        [string[]]$ConfigPath = ".\config.json"
+        [string[]]$ConfigPath = "$PSScriptRoot\config.json"
     )
 
     try {
