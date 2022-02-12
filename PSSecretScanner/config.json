@@ -34,7 +34,8 @@
         ".xml",
         ".csv",
         ".bicep",
-        ".json"
+        ".json",
+        ""
     ]
   }
   
