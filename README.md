@@ -1,4 +1,5 @@
 # PSSecretScanner
+
 Scan your repos for accidentily exposed secrets using PowerShell
 
 Super simple passwordscanner built using PowerShell.
@@ -8,6 +9,16 @@ The Regex patterns are stolen from [OWASP SEDATED security scanner repo](https:/
 Give a list of files to scan and we will check for any pattern matches in those files.
 
 Select output depending on how you want this to behave in f.ex a pipeline, console, or wrap it in a script to create your own handling.
+
+Use an excludelist to prevent false positives, or if you _really_ want to include secrets in your code, by creating a exclude file and passing it to the `-Excludelist` parameter.
+The format of the excludelist _must_ be
+
+```Text
+<Full\path\to\file.txt>;<linenumber>;<Line>
+Ex. 
+C:\MyFiles\template.json;51;-----BEGIN RSA PRIVATE KEY-----
+C:\MyRepo\MyModule.psm1:18:password = supersecret!!
+```
 
 ## Why not use OWASP instead then? The original!
 
@@ -25,6 +36,5 @@ It's also super advanced, has lots of features, and can't easily be wrapped in a
 Yes, even keeping it simple there are stuff I might want to add some day, or if you want to, feel free to create a PR.
 
 - Parallelization - make it faster on huge repos.
-- Exclude lists (Not sure how I would want this to look though.. pattern - File - something else..)
 - More filetypes! I kind of just winged it for now.
 - Steal and recreate [testcases from the OWASP page](https://github.com/OWASP/SEDATED/tree/master/testing/regex_testing) to make sure the regexes work as expected!

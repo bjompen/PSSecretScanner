@@ -7,6 +7,13 @@
 
     You can select which output stream to use to make it behave the way you want to in a pipeline,
     Or output the result to pipeline as an object to wrap it in your own script.
+
+    Excludelist can be used to ignore false positives
+    Exclusions must then be in the format
+    <Full\path\to\file.txt>;<linenumber>;<Line>
+    Ex. 
+        "C:\MyFiles\template.json;51;-----BEGIN RSA PRIVATE KEY-----"
+        "C:\MyRepo\MyModule.psm1:18:password = supersecret!!"
 .EXAMPLE
     PS C:\> Find-Secrets
     This command will scan the current directory, $PWD, for secrets using the default config.json.
@@ -34,7 +41,11 @@ function Find-Secret {
         [string]$OutputPreference = 'Error',
 
         # Path to the config.json file. If you change this, make sure the format of the custom one is correct.
-        [string[]]$ConfigPath = "$PSScriptRoot\config.json"
+        [string[]]$ConfigPath = "$PSScriptRoot\config.json",
+
+        # Path to exclude list. 
+        [ValidateScript({Test-Path $_}, ErrorMessage = "Excludelist path not found.")]
+        [string]$Excludelist
     )
 
     try {
@@ -43,6 +54,7 @@ function Find-Secret {
     catch {
         Throw "Failed to get config. Is the format correct? $_"
     }
+
     $ScanFiles = Get-ChildItem $Path -File -Recurse | Where-Object -Property Extension -in $Config['fileextensions']
     Write-Verbose "Scanning files:`n$($ScanFiles.FullName -join ""`n"")"
 
@@ -53,6 +65,15 @@ function Find-Secret {
         Write-Verbose "Performing $RegexName scan`nPattern '$Pattern'`n"
 
         Get-ChildItem $ScanFiles | Select-String -Pattern $Pattern
+    }
+    
+    if (-not [string]::IsNullOrEmpty($Excludelist)) {
+        [string[]]$Exclusions = Get-Content $Excludelist
+        Write-Verbose "Using excludelist $Excludelist. Found $($Exclusions.Count) exlude strings."
+
+        $Res = $Res | Where-Object {
+            "$($_.Path);$($_.LineNumber);$($_.Line)" -notin $Exclusions
+        }
     }
     
     $Result = "Found $($Res.Count) strings.`n"
