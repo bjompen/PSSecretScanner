@@ -49,10 +49,10 @@ function Find-Secret {
     )
 
     try {
-        $Config = Get-Content $ConfigPath | ConvertFrom-Json -AsHashtable
+        $Config = Get-Content $ConfigPath -ErrorAction Stop | ConvertFrom-Json -AsHashtable
     }
     catch {
-        Throw "Failed to get config. Is the format correct? $_"
+        Throw "Failed to get config. $_"
     }
 
     $ScanFiles = Get-ChildItem $Path -File -Recurse | Where-Object -Property Extension -in $Config['fileextensions']

@@ -20,6 +20,12 @@ C:\MyFiles\template.json;51;-----BEGIN RSA PRIVATE KEY-----
 C:\MyRepo\MyModule.psm1:18:password = supersecret!!
 ```
 
+## Installation
+
+Download it from here and import it,
+
+or from the PSGallery, run `Install-Module PSSecretScanner`
+
 ## Why not use OWASP instead then? The original!
 
 Well.. It's super awesome, has loads of features, and works really good.
