@@ -5,6 +5,7 @@
       {"_AWS_Key_line_end":"[\\s=]A[KS]IA[0-9A-Z]{16}$"},
       {"_Slack_token":"xox[pboa]-[0-9]{11,12}-[0-9]{12}-[0-9]{12}-[a-z0-9]{32}"},
       {"_Basic_Auth":"Authorization:\\sBasic\\s(?:[a-zA-Z0-9\\+/]{4})*(?:[a-zA-Z0-9\\+/]{3}=|[a-zA-Z0-9\\+/]{2}==)?(?:$|[\\s;'\"])"},
+      {"_Basic_Auth_Only_Pattern":"Basic\\s(?:[a-zA-Z0-9\\+/]{4})*(?:[a-zA-Z0-9\\+/]{3}=|[a-zA-Z0-9\\+/]{2}==)?(?:$|[\\s;'\"])"},
       {"_.npmrc_auth":"(?i)^\\+\\s{0,20}_auth\\s{0,20}="},
       {"_Connection_String":"[0-9a-z-]{3,30}(?<!mailto|sip):[a-z0-9!$)(=<>%#*&_^-]{6,45}@[0-9a-z-.]{1,50}(?:[\\s;'\",:]|$)"},
       {"_JDBC_Connection_Creds":"jdbc:oracle:thin:[0-9a-z-]{3,30}/[a-z0-9!?$)%@#*&_^-]+@"},
@@ -23,7 +24,8 @@
       {"_Facebook_Token":"facebook.{0,30}['\"][0-9a-f]{32,255}['\"]"},
       {"_Twitter_Token":"twitter.{0,30}['\"][a-z0-9]{35,44}['\"]"},
       {"_Heroku_Key":"heroku.{0,30}[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"},
-      {"_Azure_AccountKey":"AccountKey\\s+=\\s+[a-zA-Z0-9+\/=]{88}"}
+      {"_Azure_AccountKey":"AccountKey\\s+=\\s+[a-zA-Z0-9+\/=]{88}"},
+      {"_PWSH_Personal_Acces_Token_PAT":"\\$pat\\s*=\\s*['\"][a-z0-9]{52}['\"]"}
     ],
     "fileextensions":[
         ".ps1",
