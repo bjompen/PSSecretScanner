@@ -16,7 +16,7 @@ function Find-Secret {
             "C:\MyFiles\template.json;51;-----BEGIN RSA PRIVATE KEY-----"
             "C:\MyRepo\MyModule.psm1:18:password = supersecret!!"
     .EXAMPLE
-        PS C:\> Find-Secrets
+        PS C:\> Find-Secret
         This command will scan the current directory, $PWD, for secrets using the default config.json.
     .EXAMPLE
         PS C:\> Find-Secret -Path c:\MyPowerShellFiles\, C:\MyBicepFiles\MyModule.bicep
