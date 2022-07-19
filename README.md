@@ -36,6 +36,7 @@ It's also super advanced, has lots of features, and can't easily be wrapped in a
 
 - Added `_Azure_AccountKey` pattern found at [Detect-secrets from YELP](https://github.com/Yelp/detect-secrets)
 - Added underscore `_` to names to make them easier to work with in PowerShell.
+- Added patterns from [h33tlit](https://github.com/h33tlit/secret-regex-list#readme) (thank you [Simon Wåhlin](https://github.com/SimonWahlin/) for telling me)
 
 ## Features to add
 
