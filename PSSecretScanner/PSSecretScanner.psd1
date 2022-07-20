@@ -12,10 +12,10 @@
 RootModule = 'PSSecretScanner.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.5'
+ModuleVersion = '1.0.6'
 
 # Supported PSEditions
-CompatiblePSEditions = @('Core')
+CompatiblePSEditions = @('Core','Desktop')
 
 # ID used to uniquely identify this module
 GUID = '8ee01e4c-44a3-409d-b6e9-e73ff72f1556'
@@ -33,7 +33,7 @@ Copyright = 'Björn Sundling'
 Description = 'Scan for secrets in code to prevent accidentaly commited secrets'
 
 # Minimum version of the PowerShell engine required by this module
-PowerShellVersion = '7.0'
+PowerShellVersion = '5.0'
 
 # Name of the PowerShell host required by this module
 # PowerShellHostName = ''

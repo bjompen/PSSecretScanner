@@ -1,3 +1,79 @@
+function Assert-Parameter {
+    <#
+    .SYNOPSIS
+        Simplifies custom error messages for ValidateScript
+    
+    .DESCRIPTION
+        Windows PowerShell implementation of the ErrorMessage functionality available
+        for ValidateScript in PowerShell core
+    
+    .EXAMPLE
+        [ValidateScript({ Assert-Parameter -ScriptBlock {Test-Path $_} -ErrorMessage "Path not found." })]
+    #>
+    param(
+        [Parameter(Position = 0)]
+        [scriptblock] $ScriptBlock
+        ,
+        [Parameter(Position = 1)]
+        [string] $ErrorMessage = 'Failed parameter assertion'
+    )
+
+    if (& $ScriptBlock) {
+        $true
+    } else {
+        throw $ErrorMessage
+    }
+}
+
+
+function ConvertTo-Hashtable {
+    <#
+    .SYNOPSIS
+        Converts PowerShell object to hashtable
+
+    .DESCRIPTION
+        Converts PowerShell objects, including nested objets, arrays etc. to a hashtable
+
+    .PARAMETER InputObject
+        The object that you want to convert to a hashtable
+
+    .EXAMPLE
+        Get-Content -Raw -Path C:\Path\To\file.json | ConvertFrom-Json | ConvertTo-Hashtable
+
+    .NOTES
+        Based on function by Dave Wyatt found on Stack Overflow
+        https://stackoverflow.com/questions/3740128/pscustomobject-to-hashtable
+    #>
+    param (
+        [Parameter(ValueFromPipeline)]
+        $InputObject
+    )
+
+    process {
+        if ($null -eq $InputObject) { return $null }
+
+        if ($InputObject -is [System.Collections.IEnumerable] -and $InputObject -isnot [string]) {
+            $collection = @(
+                foreach ($object in $InputObject) { ConvertTo-Hashtable -InputObject $object }
+            )
+
+            Write-Output -NoEnumerate $collection
+        } elseif ($InputObject -is [psobject]) {
+            $hash = @{}
+
+            foreach ($property in $InputObject.PSObject.Properties) {
+                $hash[$property.Name] = ConvertTo-Hashtable -InputObject $property.Value
+            }
+
+            $hash
+        } else {
+            $InputObject
+        }
+    }
+}
+
+
+
 function Find-Secret {
     <#
     .SYNOPSIS
@@ -41,7 +117,7 @@ function Find-Secret {
     [CmdletBinding()]
     param (
         # The folders and files to scan. Folders are recursively scanned.
-        [ValidateScript({Test-Path $_}, ErrorMessage = "Path not found.")]
+        [ValidateScript({ Assert-Parameter -ScriptBlock {Test-Path $_} -ErrorMessage "Path not found." })]
         [string[]]$Path = "$PWD",
 
         # Set the stream to output data to, or output the Select-String object to create your own handling.
@@ -52,7 +128,7 @@ function Find-Secret {
         [string]$ConfigPath = "$PSScriptRoot\config.json",
 
         # Path to exclude list. 
-        [ValidateScript({Test-Path $_}, ErrorMessage = "Excludelist path not found.")]
+        [ValidateScript({ Assert-Parameter -ScriptBlock {Test-Path $_} -ErrorMessage "Excludelist path not found." })]
         [string]$Excludelist,
 
         # Filetype(s) to scan. If this parameter is set we will only scan files of type in thes list. Use '*' to scan all filetypes. (This will even try to scan non clear text files, and may be slow.) 
@@ -60,7 +136,11 @@ function Find-Secret {
     )
 
     try {
-        $Config = Get-Content $ConfigPath -ErrorAction Stop | ConvertFrom-Json -AsHashtable
+        if ($PSVersionTable.PSEdition -eq 'Core') {
+            $Config = Get-Content $ConfigPath -ErrorAction Stop | ConvertFrom-Json -AsHashtable
+        } else {
+            $Config = Get-Content $ConfigPath -ErrorAction Stop -Raw | ConvertFrom-Json | ConvertTo-Hashtable
+        }
     }
     catch {
         Throw "Failed to get config. $_"
@@ -93,7 +173,7 @@ function Find-Secret {
 
         Write-Verbose "Performing $RegexName scan`nPattern '$Pattern'`n"
 
-        Get-ChildItem $ScanFiles | Select-String -Pattern $Pattern
+        Get-ChildItem $ScanFiles.FullName | Select-String -Pattern $Pattern
     }
     
     if (-not [string]::IsNullOrEmpty($Excludelist)) {
@@ -134,7 +214,7 @@ function New-PSSSConfig {
     #>
     param (
         [Parameter(Mandatory)]
-        [ValidateScript({-not (Test-Path $_)}, ErrorMessage = "File already exists.")]
+        [ValidateScript({ Assert-Parameter -ScriptBlock {-not (Test-Path $_)} -ErrorMessage "File already exists." })]
         [string]$Path
     )
 
