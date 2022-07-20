@@ -1,6 +1,6 @@
 # PSSecretScanner
 
-Scan your repos for accidentily exposed secrets using PowerShell
+Scan your repos for accidentily exposed secrets using PowerShell (version 7 or later, thanks [Jeff Hicks](https://github.com/jdhitsolutions) for letting me know!)
 
 Super simple passwordscanner built using PowerShell.
 

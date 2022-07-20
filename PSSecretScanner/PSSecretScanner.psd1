@@ -15,7 +15,7 @@ RootModule = 'PSSecretScanner.psm1'
 ModuleVersion = '1.0.4'
 
 # Supported PSEditions
-# CompatiblePSEditions = @()
+CompatiblePSEditions = @('Core')
 
 # ID used to uniquely identify this module
 GUID = '8ee01e4c-44a3-409d-b6e9-e73ff72f1556'
