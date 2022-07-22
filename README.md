@@ -2,7 +2,7 @@
 
 Super simple passwordscanner built using PowerShell.
 
-Scan your repos for accidentily exposed secrets using PowerShell.
+Scan your code, files, folders, and repos for accidentily exposed secrets using PowerShell.
 
 ## Features
 
