@@ -1,0 +1,4535 @@
+[
+    {
+      "Pattern": "https://AKIAI44QH8DHBEXAMPLE/this.com",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "AEmAATYAJMgAkIAs762q0QZ1xMgAkwASbABJgAE2ACTIAJ9B8BFuL",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "      \"password\": password || null        ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "            password         : password  ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "    internal func logIn(email: String, password: String) {",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "            logIn(email: email, password: password)",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "                        self?.logIn(email: email, password: password)",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the passwd application that was being started by froderick?",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PSWRD=\"${env.PSWRD}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "if [[ `echo \"$KEY\" | grep -E \"${delimited_reArray[@]}\"` ]]; then",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PSWRD=${pswrd}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pswrd=credentials.getPswrd();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the pswrd application that was being started by froderick?",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASS=\"${env.PASS}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASS=${pass}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pass=credentials.getPass();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the pass application that was being started by froderick?",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "BEGIN RSA PRIVATE KEY",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "BEGIN OPENSSH PRIVATE KEY",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "BEGIN DSA PRIVATE KEY",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "BEGIN EC PRIVATE KEY",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "BEGIN PGP PRIVATE KEY BLOCK",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "----BEGIN RSA PRIVATE KEY-----",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "------BEGIN OPENSSH PRIVATE KEY-----",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "   -----BEGIN DSA PRIVATE KEY-----",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "------BEGIN EC PRIVATE KEY-----",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "-----BEGIN PGP PRIVATE KEY BLOCK----",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "-----beGIN RsA PRIvate KEy-----",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "------begin OPenSSH priVATE KeY-----",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "   -----bEgIn DsA pRiVaTe kEY-----",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "------beGIN ec PRivaTE keY-----",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "-----BeGiN PGP PRiVaTe KeY BLoCK-----",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Client Secret == 'VIviyomam13lC-1335532dd23g'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "SECRET=\"38FJF84-FJFU785-KDHR74-DJDUE\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "app-secret=anothersecRet4ME",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "\"client_secret\":\"sd0Lhjhjk-kPnhyt_fred7wq\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD = \"anothersecRet4ME!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "APP_KEY = abc123E3456abc",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "SECRET-KEY=USERSECRET4thViolation",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: 1abc2EF^&$",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: admin",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "MY_APP_PASSWORD: ${MY_APP_PASSWORD}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "String MY_CLIENT_SECRET = \"12lkvjkkd-jfu34jsdsjeie56jfd-mcjsd7j8\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "String CLIENT_SECRET = \"this-Is-My-cl1en7-5ecret\";  APP_USER = \"johnDoe\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "String CLIENT_SECRET = 'this-Is-My-cl1en7-5ecret'  APP_USER = 'johnDoe'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "int five = 5 String CLIENT_SECRET = 'this-Is-My-cl1en7-5ecret'  APP_USER = 'johnDoe'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "sh \"set -e | curl -i -H 'X-Api-Key: 12345abcdefghijklmno' -T BackEnd/build/libs/example_api-0.1.0.jar",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = \"thisReallyI5M1P@$$w0rd-HaHa!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "username = \"johnDoe\"; password = \"thisReallyI5M1P@$$w0rd-HaHa!\"; user_id = 32;",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "This is only an example password - password: \"notReallyMyP@ssword1!\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "SECRET_KEY: \"this-Is-My-cl1en7-5ecret\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "SecretKey=thisismysecret123key",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "SECRETKEY     = thisismysecret123key",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "int five = 5; String API_KEY = 'this-Is-My-cl1en7-5ecret';  APP_USER = 'johnDoe';",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "API_KEY: \"this-Is-My-cl1en7-api-Key\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "APIKey=thisismysecret123apikey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "api_key     = thisismysecret123APIkey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "int five = 5; String SENSITIVE_KEY = 'this-Is-My-cl1en7-5ecret';  APP_USER = 'johnDoe';",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "SENSITIVE_KEY: \"this-Is-My-cl1en7-SENSITIVE-Key\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "SENSITIVEKey=thisismysecret123SENSITIVEkey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "sensitive_key     = thisismysecret123sensitivekey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "int five = 5; String PRIVATE_KEY = 'this-Is-My-cl1en7-5ecret';  APP_USER = 'johnDoe';",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PRIVATE_KEY: \"this-Is-My-cl1en7-Private-Key\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PrivateKey=thisismysecret123Privatekey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "private_key     = thisismysecret123privatekey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "int five = 5; String ACCESS_KEY = 'this-Is-My-access7-Key5ecret';  APP_USER = 'johnDoe';",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ACCESS_KEY: \"this-Is-My-cl1en7-Access-Key\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "AccessKey=thisismysecret123Accesskey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "access_key     = thisismysecret123accesskey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "int five = 5; String APPLICATION_KEY = 'this-Is-My-application7-Key5ecret';  APP_USER = 'johnDoe';",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "APPLICATION_KEY: \"this-Is-My-cl1en7-Application-Key\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ApplicationKey=thisismysecret123Applicationkey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "application_key     = thisismysecret123applicationkey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "int five = 5; String APP_KEY = 'this-Is-My-app7-Key5ecret';  APP_USER = 'johnDoe';",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "APP_KEY: \"this-Is-My-cl1en7-App-Key\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "AppKey=thisismysecret123Appkey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "app_key     = thisismysecret123appkey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "AWS_KEY = 'ZW5jb2RlZCBzdHJpbmcgaGVyZSBub3cgZHVkZS4=' ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "private static final String AWS_KEY = \"ZW5jb2RlZCBzdHJpbmcgaGVyZSBub3cgZHVkZS4=\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "AWS_SECRET_ACCESS_KEY = 'ZW5jb2RlZCBzdHJpbmcgaGVyZSBub3cgZHVkZS4=' ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "private static final String AWS_SECRET_ACCESS_KEY = \"ZW5jb2RlZCBzdHJpbmcgaGVyZSBub3cgZHVkZS4=\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "This is our aws key AKIA12ABCD34EFGH56IJK well actually that is just a test aws key.",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "SECRET    := variable_name_for_golang",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Secret    = thisismysecret123appkey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "SECRET    =    thisismysecret123appkey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "SECRET := variable_name_for_golang",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "SECRET = thisismysecret123appkey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "secret:    thisismysecret123appkey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "SECRET:=variable_name_for_golang",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret=thisismysecret123appkey",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "SECRET:thisismysecret123appkey ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD    - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWORD - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Password    := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Password    = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password    =    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PassWord = thisIsMyP@$$w0rd1-Ha-Ha! ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD:    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Passwd:    thisIsMyP@$$w0rd1-Ha-Ha!, extrastuff-bobbytablesjunior: valueson,",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD:=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWORD=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD:thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD    - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWORD    -     \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWORD    := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD    = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password    =     \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Password:    \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD:=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD:\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD    - 'thisIsMyP@$$w0rd1-Ha-Ha?'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWORD    -    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWORD    := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD    = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD    =    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD:    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD:='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD:'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "\"password\": \"$MyPa$$w0rdz123\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "\"Password\":\"$MyPa$$w0rdz123\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = $password ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: password",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: password1 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: pa$$word1 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: pa$$w1, ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pass: pass1",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: $my_password ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password          : password1 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd     : this1thingi$it",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pass   :       tabbedpassword@here123 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "passwd:            1thisIsmyp@wd! ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "username: bobbytables, password: password1, userID: 1234, header_randomness: sdlkjfiuewfbewiefewuifsufwkfsnckhjdskfhsdkufhsdfjk, ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "username:bobbytables,password:password1,userID:1234,header_randomness:sdlkjfiuewfbewiefewuifsufwkfsnckhjdskfhsdkufhsdfjk,",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "username:bobbytables,password:1passw0rdfromme,userID:1234,header_randomness:sdlkjfiuewfbewiefewuifsufwkfsnckhjdskfhsdkufhsdfjk,",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "username:bobbytables;password:1passw0rdfromme;userID:1234;header_randomness:sdlkjfiuewfbewiefewuifsufwkfsnckhjdskfhsdkufhsdfjk;",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password  : my_app_password",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: reallylongpassword9thatshould1notbe4flaggedtothisonething",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: password1",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: \"$imeonsPa$$w0rdz123\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password=password",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Password = \"$345lsd6789\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "env_password = $password",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "USER = \"user\"; PASSWORD = \"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; PASSWORD=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = 'user' PASSWORD = 'thisIsMyP@$$w0rd1-Ha-Ha!' USER_ID = 'user_id'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD    - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWD - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWD    := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWD    = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Passwd    =    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWD = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "passwd:    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD:=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD:thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Passwd    - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWD - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWD    := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD    = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD    =     \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Passwd = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD:    \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD:=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD:\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD    - 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWD    -    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWD    := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD    = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD    =    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD:    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD:='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD:'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; PASSWD = \"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; passwd=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; PASSWD=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = 'user' Passwd = 'thisIsMyP@$$w0rd1-Ha-Ha!' USER_ID = 'user_id'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswrd    - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Pswrd - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PSWRD    := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PSWRD    = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD    =    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Pswrd = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD:    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD:=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pswrd=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD:thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD    - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PSWRD - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PSWRD    := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD    = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswrd    =    \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pswrd:    \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD:=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD:\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD    - 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PSWRD - 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PSWRD    := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswrd    = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD    =    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD:    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD:='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD:'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; PSWRD = \"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; Pswrd=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; pswrd=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = 'user' PSWRD = 'thisIsMyP@$$w0rd1-Ha-Ha!' USER_ID = 'user_id'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWD    - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pswd - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pswd    := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PSWD    = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pswd    =    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pswd = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd:    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd:=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pswd=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd:thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd    - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pswd - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pswd    := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWD    = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd    =    \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd:    \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd:=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWD:\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd    - 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pswd - 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pswd    := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pswd    = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd    =    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWD = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd:    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd:='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd:'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; PSWD = \"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; Pswd=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; pswd=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = 'user' PSWD = 'thisIsMyP@$$w0rd1-Ha-Ha!' USER_ID = 'user_id'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PWD    - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd    := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PWD    = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pwd    =    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd:    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd:=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd:thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd    - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd    := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PWD    = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd    =    \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd:    \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd:=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PWD:\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd    - 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd - 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd    := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pwd    = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd    =    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PWD = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd:    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd:='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd:'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; PWD = \"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; Pwd=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; pwd=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = 'user' PWD = 'thisIsMyP@$$w0rd1-Ha-Ha!' USER_ID = 'user_id'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PWRD    - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwrd - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwrd    := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PWRD    = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pwrd    =    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwrd = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd:    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd       :    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd:=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwrd=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd:thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd    - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwrd - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwrd    := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PWRD    = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd    =    \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd:    \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd:=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PWRD:\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd    - 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwrd - 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwrd    := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pwrd    = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd    =    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PWRD = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd:    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd:='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwrd:'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; PWRD = \"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; Pwrd=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; pwrd=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = 'user' PWRD = 'thisIsMyP@$$w0rd1-Ha-Ha!' USER_ID = 'user_id'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pass    - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASS - thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pass    := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pass    = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS    =    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS := thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Pass = thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS:    thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pass:=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASS=thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS:thisIsMyP@$$w0rd1-Ha-Ha!",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS    - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Pass - \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pass    := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS    = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS    =    \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS := \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pass = \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pass:    \"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS:=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS=\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS:\"thisIsMyP@$$w0rd1-Ha-Ha!\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pass    - 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASS - 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASS    := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS    = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pass    =    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS := 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pass = 'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS:    'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS:='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS='thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS:'thisIsMyP@$$w0rd1-Ha-Ha!'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; PASS = \"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; Pass=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = \"user\"; pass=\"thisIsMyP@$$w0rd1-Ha-Ha!\"; USER_ID = \"user_id\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "USER = 'user' PASS = 'thisIsMyP@$$w0rd1-Ha-Ha!' USER_ID = 'user_id'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "xoxp-12345678901-123456789012-123456789012-dc82b1510a492cf2087dd72cdb9860fb",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "XoXp-12345678901-123456789012-123456789012-dc82b1510a492cf2087dd72cdb9860fb",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "\"client_secret\": \"1bcdabcdabcdabcdabcdabcdabcdabcdabcdabcd\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "{\"client_secret\": \"abcdabcdabcdabcdabcdabcdabcdabcdabcdabc1\",\"scopes\": [\"public_repo\"],\"note\": \"admin script\"}",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "AWS_KEY = 'ASIA12ABCD34EFGH56IJ';",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "AWS_KEY = \"AKIA123456789EXAMPLE\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "\t\tAWS_KEY: AKIA123456789EXAMPLE",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "\t\tAWS_KEY: AKIA123456789EXAMPLE ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "MY_AWS_KEY = 'AKIAJSIE27KKMHXI3BJQ' ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "AWS_KEY = \"AKIA123456789EXAMPLE\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "aws.key=AKIAI44QH8DHBEXAMPLE",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "aws.key=AKIAI44QH8DHBEXAMPLE ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "aws.key=\"AKIAI44QH8DHBEXAMPLE\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "aws.key=\"AKIAI44QH8DHBEXAMPLE\"    ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "aws.key='AKIAI44QH8DHBEXAMPLE'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "aws.key='AKIAI44QH8DHBEXAMPLE' ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "String mykey = \"AKIAI44QH8DHBEXAMPLE\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  integrity: sha1-ZW5jb2RlZCBzdHJpbmcgaGVyZSBub3cgZHVkZS4=",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  \"message\": \"ZW5jb2RlZCBzdHJpbmcgaGVyZSBub3cgZHVkZS4gc28gbGV0IG1lIHRlbGwgeW91IGFib3V0IHRoZSBzdG9yeSBvZiBtYW4gbmFtZWQgSmVkLCBwb29yIG1vdW50YWluZWVyIGJhcmVseSBrZXB0IGhpcyBmYW1pbHkgZmVkLg==\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ABC152ASDFGFD2FGG6G8G45GB2FGDFS5GDS5B5S5GBDS4B56SGDFS2BV5DF5BFD2BFDS25",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "GITHUB_TOKEN: 'a123456750204904539bcb8bd004dac09eb23077'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "GITHUB_TOKEN = \"a123456750204904539bcb8bd004dac09eb23077\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "-----BEGIN RSA PRIVATE KEY-----",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "-----BEGIN OPENSSH PRIVATE KEY-----",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "-----BEGIN DSA PRIVATE KEY-----",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "-----BEGIN EC PRIVATE KEY-----",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "      -----BEGIN EC PRIVATE KEY-----       ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "-----BEGIN PGP PRIVATE KEY BLOCK-----",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "funciton -----BEGIN PGP PRIVATE KEY BLOCK----- \"{}+\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "$-----BEGIN DSA PRIVATE KEY----- ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "\"-----BEGIN OPENSSH PRIVATE KEY-----\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "TWITTER_TOKEN: \"1234567890abcdefghij1234567890abcde\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "fe fi fo fum twitter_Oauth = \"1234567890abcdefghij1234567890abcde123456789\" that smells good and I want some",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "TwitterAuth='1234567890abcdefghij1234567890abcde123456789' and then...",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "FACEBOOK_TOKEN: \"1234567890abcdefabcd1234567890abcde\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "fe fi fo fum facebook_Oauth = \"1234567890abcdef1234567890abcde1234567890abcdef1234567890abcde1234567890abcdef1234567890abcde1234567890abcdef1234567890abcde\" that smells good and I want some",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "FaceBookAuth='1234567890abcdef1234567890abcde1234567890abcdef1234567890abcde123' and then...",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "HEROKU_TOKEN: \"01234567-89ab-cdef-0123-456789abcdef\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "heroku_Oauth = '01234567-89ab-cdef-0123-456789abcdef'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "HerokuAuth=01234567-89ab-cdef-0123-456789abcdef",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "curl -X GET https://api.heroku.com/apps/01234567-89ab-cdef-0123-456789abcdef -H \"Accept: application/vnd.heroku+json; version=3\" -H \"Authorization: Bearer $TUTORIAL_KEY\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "GITHUB_TOKEN=${env.GITHUB_TOKEN}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "GITHUB_TOKEN=\"${env.GITHUB_TOKEN}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "It has been proven that github accredation is not a real thing, however Antidisestablishmentarianism is a real word.",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "TWITTER_TOKEN=${env.TWITTERTOKEN}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "final String TwitterToken = credentials.getTwitterToken();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "https://help.twitter.com/en/rules-and-policies#research-and-experiments",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "In my twitter account I follow an Antidisestablishmentarianism account.",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "FACEBOOK_TOKEN=${env.FACEBOOKTOKEN}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "final String FaceBookToken = credentials.getFaceBookToken();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fads%2Fpreferences%2F%3Fentry_product%3Dad_settings_screen",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "In my facebook account I created an Antidisestablishmentarianism page.",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "HEROKU_TOKEN=${env.HEROKU_TOKEN}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "final String HerokuToken = credentials.getHerokuToken();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "curl -X GET https://api.heroku.com/apps/${HEROKU_TOKEN} -H \"Accept: application/vnd.heroku+json; version=3\" -H \"Authorization: Bearer $TUTORIAL_KEY\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "I am going to use the word heroku and Antidisestablishmentarianism in the same sentence to see if it flags.",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "final String MY_CLIENT_SECRET = credentials.getAppSecret();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "SECRET=${envSECRET};",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the secret application",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the secret application that was being started by froderick?",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "sh \"set -e | curl -i -H 'X-Api-Key: ${ARTIFACTORY_KEY}' -T BackEnd/build/libs/example_api-0.1.0.jar'\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "If you have an API Key application please be sure and ignore this.",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Your password credentials cannot be blank",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the secret key application that was being started by froderick?",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "SECRET_KEY=\"${env.secret-key}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "SECRET-KEY=${secretkey}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "secret-key=credentials.getSecretKey();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "API_KEY=\"${env.api-key}\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "API KEY=${apikey}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "api-key=credentials.getAPIKey();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the api key application that was being started by froderick?",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "SENSITIVE_KEY=\"${env.SENSITIVE-key}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "SENSITIVE KEY=${SENSITIVEkey}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "sensitive-key=credentials.getSensitiveKey();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the sensitive key application that was being started by froderick?",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PRIVATE_KEY=\"${env.Private-key}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PRIVATE KEY=${privatekey}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "private-key=credentials.getPrivateKey();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the private key application that was being started by froderick?",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ACCESS_KEY=\"${env.Access-Key}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ACCESS KEY=${accesskey}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "access-key=credentials.getAccessKey();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the access key application that was being started by froderick?",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "APPLICATION_KEY=\"${env.Application-Key}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "APPLICATION KEY=${applicationkey}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "application-key=credentials.getApplicationKey();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the application key application that was being started by froderick?",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "APP_KEY=\"${env.App-Key}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "APP KEY=${appkey}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "app-key=credentials.getAppKey();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the app key application that was being started by froderick?",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWORD=\"${env.Password}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWORD=${password}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password=credentials.getPassword();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password=getPassword();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password=getPassword()",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Have you heard of the password application that was being started by froderick?",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWD=\"${env.Passwd}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PASSWD=${passwd}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd=credentials.getPasswd();",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "It is important to include the password-destroyer",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "It is important to include the passwd-destroyer",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "It is important to include the pass-destroyer",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "It is important to include the pswd-destroyer",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "It is important to include the pswrd-destroyer",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "{\"username\":\"ralph_Lghr\", \"userPassword\":\"thisIsMyP@$$w0rd1-Ha-Ha!\", \"dobMonthValue\":\"11\", \"birthYear\":\"1947\",\"__comment\": \"user0\"} ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "this.password = function(password) ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<add name=\"Local\" connectionString=\"Data Source=imsst026,1234;Initial Catalog=IMC_DOG_EVENT_LOG_Local;User Id=DOGEuser;Password=thisIsMyP@$$w0rd1;\"/> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Value>Data Source=IMAST040,1234;User id=ASVState_18_IMC_USR;Password=thisIsMyP@$$w0rd1-Ha-Ha!;Initial Catalog=IMC_ATV_STATE_18_Local</Value> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "case \"passwordEmail\": ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "case \"Password\": ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "type=\"password\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "public string Password; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "this.login({ username: this.registerViewModel.user.username, password: this.registerViewModel.reenterPassword }); ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "\"password\": \"\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "\"password\": \" \",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "\"password\": \"a\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Property Name=\"Password\" Value=\"thisIsMyP@$$w0rd1\"/> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<password primary=\"thisIsMyP@$$w0rd1)\"/> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Property Name=\"Password\" Value=\"Nn%N12M3)o4P\"/> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "import { MyaPasswordCreateComponent } from './mya-password-create.component'; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "\"userPassword\": \"thisIsMyP@$$w0rd1-Ha-Ha!\", ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "\"userPassword\":\"thisIsMyP@$$w0rd1-Ha-Ha!\", ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<password primary=\"thisIsMyPw0rd1)\"/> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<password primary=${PASSWORD}/> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Property Name=\"Password\" Value=\"efgh@abcd-\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<add key=\"ImagingFTPHostPassword\" value=\"AB#C3deF21\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Property Name=\"Password\" Value=\"${PASSWORD}\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<add key=\"ImagingFTPHostPassword\" value=\"${PASSWORD}\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Property Name=\"Password\" Value=${PASSWORD} /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<add key=\"ImagingFTPHostPassword\" value=${PASSWORD} /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = @\"4dfdf#df\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password:@\"p@ssw0rd1\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword(\"testPassW0rd\"); ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword('testPassW0rd');",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPasswd(\"testPassW0rd\"); ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPasswd('testPassW0rd');",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPass(\"testPassW0rd\"); ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPass('testPassW0rd');",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPswrd(\"testPassW0rd\"); ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPswrd('testPassW0rd');",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPswd(\"testPassW0rd\"); ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPswd('testPassW0rd');",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword(credentials.Password);",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword(Password_Variable);",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPasswd(credentials.Password);",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPasswd(Password_Variable);",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPass(credentials.Password);",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPass(Password_Variable);",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPswrd(credentials.Password);",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPswrd(Password_Variable);",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPswd(credentials.Password);",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPswd(Password_Variable);",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Credential.setPassword(null);",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Credential.setPassword(\"\");",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "assertEquals(\"testPass\", result.getPassword());",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "|-- overpass_underpass: Double (nullable = true)\\n\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pass: String \"MyP@$$w0Rd\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "|-- (no space) overpass_underpass: double",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "|-- (space) overpass_underpass: double ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "      \" |-- overpass_underpass: double (nullable = true)\\n\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pass: mYpAssw0rD",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pass: mYpAssw0rD ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pass: mYpAssw0rD1",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pass: mYpAssworDlongerthanshortch@racterlenGthfort1 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pass: mYpAssworDlongerthanshortch@racterlenGthfort1",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pass: mYpAssworDlongerthanshortcharacterlenGthfort1pa $stoolong ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pass: mYpAssworDlongerthanshortcharact.erlenGth",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Pass: \"mYp@$$w0rD\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Password:     \"admin\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password='Admin'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWORD = \"ADMIN\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Passwd:     \"admin\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "passwd='Admin'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASSWD = \"ADMIN\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pswrd:     \"admin\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswrd='Admin'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pswd:     \"admin\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd='Admin'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PSWRD = \"ADMIN\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Pass:     \"admin\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pass='Admin'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PASS = \"ADMIN\";",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_auth = dXNyLWFiLWFiYzpBQkNEMWVGR2hpSjFhTGV5WjVQMVZ6cURDZg",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_auth = usr-ab-abc:ABCD1eFGhiJ1aLeyZ5P1VzqDCf",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_password = QUJDRDFlRkdoaUoxYUxleVo1UDFWenFEQ2Y=",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_password = ABCD1eFGhiJ1aLeyZ5P1VzqDCf",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_password=QUJDRDFlRkdoaUoxYUxleVo1UDFWenFEQ2Y=",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_password=ABCD1eFGhiJ1aLeyZ5P1VzqDCf",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_auth = dXNyLWFiLWFiYzpBQkNEMWVGR2hpSjFhTGV5WjVQMVZ6cURDZg ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_auth = usr-ab-abc:ABCD1eFGhiJ1aLeyZ5P1VzqDCf ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_auth=usr-ab-abc:ABCD1eFGhiJ1aLeyZ5P1VzqDCf ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_auth=dXNyLWFiLWFiYzpBQkNEMWVGR2hpSjFhTGV5WjVQMVZ6cURDZg ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_auth          = dXNyLWFiLWFiYzpBQkNEMWVGR2hpSjFhTGV5WjVQMVZ6cURDZg ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_password = QUJDRDFlRkdoaUoxYUxleVo1UDFWenFEQ2Y= ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_password = ABCD1eFGhiJ1aLeyZ5P1VzqDCf ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_password      = QUJDRDFlRkdoaUoxYUxleVo1UDFWenFEQ2Y= ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "test_authority",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_auth = ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_auth = varNameA",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "test_password ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_password = pa$$w0rd!123 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "my_password = ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "_password = ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "_password= ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Authorization: Basic bTp5b3ViZQ== ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "sh \"set -e | curl -i -H 'Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l' -T BackEnd/build/libs/example_api-0.1.0.jar",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Authorization: Basic $AuthTokenVariable",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Authorization: Basic ${AuthTokenVariable}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "sh \"set -e | curl -i -H 'Authorization: Basic ${AuthTokenVariable}' -T BackEnd/build/libs/example_api-0.1.0.jar",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "GOOGLE_MAPS_API_KEY = ABcdEfGh1IJK-2LMnop3Qr4ST_UVwx5YZ6A7bCD",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "not-a-key = varNameA",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Not_A_Key = varNameA",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "thisisNOTmysecret123Appkey",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "thisismyNOTsecret123appkey",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "thisisNOTmysecret123applicationkey",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "thisisNOTmysecret123Applicationkey",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " 'database': 'mongodb://EVILUSER:A1bcdEf@Abc12345.mysite.com:27010,Abc12345.mysite.com:27010/LUSER?set=PROD'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " \"ConnectionString\": \"mongodb://ABCDUSER:1abCDEfg@Abc1234.mysite.com:27010,Abc1234.mysite.com:27010/AUSER?set=PROD\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " 'ssh': 'ssh://EVILUSER:A1bcdEf@Abc12345.mysite.com:22",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " 'ssh': 'ssh://EVILUSER:pa!$)(=<>%#*&_^-w0(rD1!@Abc12345.mysite.com:22 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " 'ftp': 'ftp://eviluser:p%40%24%24w0rD1%21@Abc12345.mysite.com:22",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " 'credentials': 'eviluser:A1bcdEf@Abc12345'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " \"credentials\": \"evilUser:A1bcdEf@Abc12345\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " 'credentials': 'eviluser:A1bcdEf@Abc12345' ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " 'credentials': 'Eviluser:pa!$)(=<>%#*&_^-(worD)-@Abc12345' ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "credential=eviluser:A1bcdEf@Abc12345",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "credential=eviluser:A1bcdEf@Abc12345 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " 'database': 'mongodb://${USER_ENV}:${PASS_ENV}@Abc12345.mysite.com:27010,Abc12345.mysite.com:27010/LUSER?set=PROD'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "${USER_ENV}:${PASS_ENV}@abcwhatever.mysite.com",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "USER:${PASS_ENV}@abcwhatever",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "user:${password_env}@abcWhatever ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " System.getEnv(\"USER\") + \":\" + System.getEnv(\"PASS\") + \"@abc.mysite.com\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "mailto:name@mydomain.com",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " mailto:name@mydomain.com ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<a href=\"mailto:name@mydomain.com\">Click Here To Email Me</a> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "for (i in 1:length(grid@my_ids)){",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  for (i in 10:length(grid@my_ids)){ ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "sip:name@mydomain.com",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " sip:name@mydomain.com ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "'sip:name@domain.com','sip:othername@domain.com',",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "'sip:name@domain.com','sip:othername@domain.com' ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "https://artifactory.mybiz.com:443/repo/api/npm/eslint/@typescript-eslint ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "https://artifactory.mybiz.com:443/repo/api/npm/npm-nodelib/@nodelib",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "https://artifactory.mybiz.com:443/repo/api/npm/npm-hapi/@hapi ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " con test:testing@dbs.com ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " con test:testing@dbs.com",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "test:testing@dbs.com ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "\"resolved\": \"https://artifactory.mybiz.com:443/repo/api/npm/npm/@babel/package/package-1.2.3.tgz\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "      \"resolved\": \"https://artifactory.mybiz.com:443/repo/api/npm/npm/@babel/package/-/package-1.2.3.tgz\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Y2hlY2tvdXR0aGlzIHVzZSBvZiBlbmNvZGVkIHN0cmluZw==",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "String connString=\"jdbc:oracle:thin:@prodHost:1521:ORCL\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "jdbc:oracle:thin:user1/password1@sub.domain.com:1525/abcv1.world",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "jdbc:oracle:thin:user1/pAssword1!?$)%@#*&_^-@sub.domain.com:1525/abcv1.world",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "flywayUrl = 'jdbc:oracle:thin:user2/password2@sub.domain.org:1525/abcv2.world'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ods.setURL(\"jdbc:oracle:thin:scott/tiger@dlsun511:1721:orcl\");",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "flywayUrl = 'jdbc:oracle:thin:@//192.168.255.255:49155/ME'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "     url: \"jdbc:oracle:thin:@ldap://oid.biz.com:389/cn=OracleContext,dc=biz,dc=com/abcde001\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "url = 'jdbc:oracle:thin:@bistro-uat-north-auto.abcdefgxx1hi.us-north-1.rds.amazonaws.com:1531:rdsabc11'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Password>fancyp@$$worD123!</Password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password>ZmFuY3lwQCQkd29yRDEyMyE=</Password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password>fancy password</Password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " <Password>fancypass</Password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <Password>i<3unicorns!</Password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <Password>aTwzdW5pY29ybnMh</Password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <password>s-]?ookrd34433fjkLLKI*</password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<password><>s-]?ookrd3><4433fjkLLKI*<</password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password value=\"{pass_var}\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Password value=\"fancypass\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Password value=\"i<3unicorns!\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password value='{pass_var}' /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Password value='fancypass' /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Password value='i<3unicorns!' /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password></Password> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " <Password value=\"{pass_var}\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <Password></Password> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Password></Password><Password value=\"${muffins}\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Pwd>fancyp@$$worD123!</Pwd> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Pwd>ZmFuY3lwQCQkd29yRDEyMyE</Pwd> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Pwd>fancy password</Pwd> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " <Pwd>fancypass</Pwd> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <Pwd>i<3unicorns!</Pwd> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <Pwd>aTwzdW5pY29ybnMh</Pwd> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <Pwd>s-]?ookrd34433fjkLLKI*</Pwd> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Pwd><>s-]?ookrd3><4433fjkLLKI*<</Pwd> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Pwd value=\"{pass_val}\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Pwd></Pwd> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " <Pwd value=\"{pass_var}\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " <Pwd value=\"i<3unicorns!\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " <Pwd value='i<3unicorns!' /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <Pwd></Pwd> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Pwd></Pwd><Pwd value=\"${muffins}\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Pswd value=\"i<3unicorns!\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Passwd value=\"i<3unicorns!\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<PassVar value=\"i<3unicorns!\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Pass value=\"i<3unicorns!\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Pswrd value=\"i<3unicorns!\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Pwrd value=\"i<3unicorns!\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Pswd>fancypass</Pswd> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Passwd>fancypass</Passwd> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Pwrd>fancypass</Pwrd> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Pswrd>fancypass</Pswrd> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Pass>fancypass</Pass> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Variable> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <Name>|*|AppAppDatabaseConnectionString|*|</Name> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <Description>AppAppDatabaseConnectionString</Description> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=Pa$$w0rd1</Value> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "    <Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=Paa&lt;$/$w0rd1</Value> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <TemplateDerivable>False</TemplateDerivable> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <EnvironmentName>Localhost</EnvironmentName> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "</Variable> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Password> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "</Password> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Passenger>bobbydroptables</Passenger> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Overpass>the bridge is out!!</Overpass> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<User><Password></Password></User> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<User><Username>Bobby</Username><Password/></User> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/MessagingService/JMS/Illustrations/JMS_Password=#!Ab7HdJVaZhu6COOOGHsfew==",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Application/Connections/MessagingService/JMS/Illustrations/JMS_Password=#!Ab9HdJDaKhu6COOODCotnr== ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Application/Connections/MessagingService/JMS/Illustrations/JMS_Password=#!AbxHdJDaKhuxCOOODCotnr== ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Application/Connections/MessagingService/JMS/Illustrations/JMS_Password=#{variable_name}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/MessagingService/JMS/Illustrations/JMS_Password=#{variable_name} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "AFDQCommonServices/Connections/MessagingService/JMS/Application_AFDQ/JMS_Password=#!Cd3HdJDaAhu6COOOXZabcde==",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "AFDQCommonServices/Connections/MessagingService/JMS/Application_AFDQ/JMS_Password=#!Cd2HdJDaZhu6COOOXZfghij== ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<user><Password>i<3unicorns!</Password></user> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<account><Password>i<3unicorns!</Password></account> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=Pa$$w0rd1</Value></Account><Overpass>thebridgeisout!!</Overpass><Overpass>thebridgeisout!!</Overpass> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=Pa$$w0rd1<Value><Account><Overpass>thebridgeisout!!<Overpass><Overpass>thebridgeisout!!<Overpass> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "   secret=\"${SECRET}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "secret=\"${SECRET}\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret=\"${MY_APP_SECRET}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret=\"${MY_APP_SECRET}\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret = \"$MY_APP_SECRET\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret =      \"$MY_APP_SECRET\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret = \"$MY_APP_SECRET\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_other_secret: \"$MY_APP_SECRET\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_other_secret      : \"$MY_APP_SECRET\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret: \"${MY_APP_SECRET}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret: \"${MY_APP_SECRET}\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "   secret=${SECRET} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "secret=${SECRET}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "   my_secret=${MY_APP_SECRET} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret=${MY_APP_SECRET}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret = $MY_APP_SECRET ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret = $MY_APP_SECRET",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret = $MY_APP_SECRET;",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " my_other_secret: $MY_APP_SECRET ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_other_secret: $MY_APP_SECRET",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret       : ${MY_APP_SECRET} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret:        ${MY_APP_SECRET}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "   secret='${SECRET}' ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "secret='${SECRET}'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "   my_secret='${MY_APP_SECRET}' ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret='${MY_APP_SECRET}'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret    =   '$MY_APP_SECRET' ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret = '$MY_APP_SECRET'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret = '$MY_APP_SECRET;'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " my_other_secret: '$MY_APP_SECRET' ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_other_secret: '$MY_APP_SECRET'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret: '${MY_APP_SECRET}' ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_secret: '${MY_APP_SECRET}'",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "temp-secret = 'secret_value';",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "secret=\"thisismysecret123appkey\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "userid:0001,secret:thisismysecret123getit,username:bobbytables",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = $passwordspaceafter ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = $passwordlineend",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd = mynEw20rdd$! ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " pwd = $uperstrong1 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " pwd = $uperstrong1",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " pswd = \"$password_variable\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd=\"$password_variable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " pswd = '$password_variable';",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd='$password_variable' ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " pswd = \"${password_variable}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd=\"${password_variable}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "PassWord=\"$uperStrong1!\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswrd = \"$uperStrong1!\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "PassWord=\"Super$trong1!\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswrd=\"Super$trong1!\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "user=minion,password=get$om3!,selection=ALL,",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "user=minion,password=$password,selection=ALL,",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "user=minion,password=$passw0rd,selection=ALL,",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = userpas$ ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = userpas$",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd = m$ecret ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd = m$ecret",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd = $password ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pswd = $password",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password=userpas$ ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password=userpas$",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd=m$ecret ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd=m$ecret",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd=$password ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pswd=$password",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " passwd=\"r}brurhgr!\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "passwd=\"r{blurg133!old\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "passwd=\"r{blurg$133!old\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "spring.datasource.password=${SQL_SERVER_PS}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "spring.datasource.password=${SQL_SERVER_PS} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "spring.datasource.password=$unic0Rn<3{er",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "spring.datasource.password=$unic0Rn<3{e}r",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "spring.datasource.password=\"$unic0Rn<3{er\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "spring.datasource.password=\"$unic0Rn<3{e}r\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "spring.datasource.password='$unic0Rn<3{er'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "spring.datasource.password='$unic0Rn<3{e}r'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password={variable} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password={variable",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password = @yourHouse ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password = 1@boomS0n ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password={variable_pwd}",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password={gotcha!1dude",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password={gotcha!1dude ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password=#{gotcha!1dude",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password=#gotchadude} ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password=\"{pas$word1\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password=\"{pas$word1\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password='{pas$word1' ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password='{pas$word1'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "passwd = \"{catch_var}\"; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd = \"{catch_var}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<password>%%JDBCPassword/UBIT/UBIT_DIA_EDIT_Password%%</password> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<password>%%JDBCPassword/UBIT/UBIT_DIA_EDIT_Password%</password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<password>JDBCPasswor%d/UBIT%/UBIT_DIA_EDIT_Password%%</password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<password>%%HIBBY_JIBBY_Password%%</password> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd = \"${variable}\"; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " passwd = ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " pwd= ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " pass= ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password =",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " passwd =",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " pwd=",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " pass=",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " pswd: ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password  :     ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password:",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <password>${passwd}</password> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <password>${pwd}</password> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <password>#{password}</password> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <password>#{pwd}</password> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <password>${pukswtt!</password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <password>$uperwd}</password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <password>x{password}</password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <password>#pwd123</password> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "Dim password = $\"{password}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password =           ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password=           ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password   =           ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password =      ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password =",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password=",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password =      , username = bobby,",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password=      , username = bobby,",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password =      ; username = bobby;",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password=      ; username = bobby;",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password=      \\ ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password=      // ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password=      # ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password =      \\ ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password =      // ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Application/Connections/Database/ARRXY/password =      # ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "    <!--<identity impersonate=\"true\" userName=\"ad\\bobby\" password=\"#{Replace_Value}\" />--> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "    <!--<identity impersonate=\"true\" userName=\"ad\\bobby\" password=\"me&up@$#\" />--> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "   <password>%%OnlineEndorsement/Constants/ICSIdentityUsername%%</password> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "        <password>%%OnlineEndorsement/Constants/ICS/IdentityPassword%%</password> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "Command32=\"Server=EasyBezy-t,1433;User=EasyBezy;PWD=#{Replace_Value};Initial Catalog=EasyBezy;Persist Security Info=True;MultipleActiveResultSets=True;USENT=Y;\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "VersionComments=\"Data Source=awsbman-t,1433;Initial Catalog=Bman; Application Name=EasyOnline; User ID=BmanUsr;Password=^zoner!;\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "    <add key=\"ConnectionString_NewBusinessMT\" value=\"Server=awsbman-t,1433;Database=NewBusinessMT;User ID=MiddleTier;Password=#{Replace_Value}\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "    <add key=\"ConnectionString_B2B\" value=\"Server=awsbman-t,1433;Database=B2B;User ID=b2buser;Password=#{Replace_Value};Trusted_Connection=False\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "    <add key=\"ConnectionString_B2B\" value=\"Server=awsbman-t,1433;Database=B2B;User ID=b2buser;Password=#gets0m3;Trusted_Connection=False\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password=#{password} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password=#{password ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " pwd = #abc123! ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password={variab1e ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: String \"$MyP@$$w0Rd\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd: String \"${password_var}\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd: String \"#{password_var}\"",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd: String \"#{MyP@$$w0Rd\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd: String \"#MyP@$$w0Rd}\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password value='{pass_val}' /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Passwd value=\"#{pass_var}\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Pwd value=\"$password\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Passwd value=\"#i<3unicorns!\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Pswd value='#{pass_variable}' /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Password value='$fancypass1' /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password value='#{i<3unicorns!' /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password value='#i<3unicorns!}' /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password value='${i<3unicorns!' /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "token=`curl -X POST -H \"X-Source-Namespace: engineering\" -d '{ \"password\": \"${GIT_PASSWORD}\" }' ${sourceAPIUrl}/v1/auth/engineering/engineering/login/${GIT_USERNAME} | jq -r .auth.client_token` ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "'{ \"password\": \"${GIT_PASSWORD}\" }' ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "'{ \"password\": \"${GIT_PASSWORD}\" }' ${sourceAPIUrl}/v1/auth/vl ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "'{ \"password\": \"${GIT_PASSWORD}\" }' sourceAPIUrl/v1/auth/vl ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "'{ \"password\": \"${GIT_PASSWORD}\" }' ppsourceAPIUrpppv1pauthpvl ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "'{ \"password\": \"${GIT_PASSWORD}\" }' sourceAPIUrl/vl/auth/vabasdfadfafasdfafd asdf asdfasdf asdf asf asfsdafds fsd fsdfasf asfasf as1 ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "'{ \"password\": \"${GIT_PASSWORD}\" }' sourceAPIUrl/vl/auth/vabasdfadfafasdfafd asdf asdfasdf asdf asf asfsdafds fsd fsdfasf asfasf as ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "'{ \"password\": \"${GIT_PASSWORD}\" }' sourceAPIUrl/vl/auth/vabasdfadfafasdfafd asdf asdfasdf asdf asf asfsdafds fsd fsdfasf asfasf as\"1 ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "'{ \"password\": \"${GIT_PASSWORD}\" }' ${sourceAPIUrl}/v/auth/vl ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "{ \"password\": \"${GIT_PASSWORD}\" }' ${sourceAPIUrl}/v1/auth/sourceAPIUrl/engineering/login/${GIT_USERNAME} | jq -r .auth.client_token` ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "                    token=`curl -X POST -H \"X-Source-Namespace: engineer\" -d '{ \"password\": \"${GIT_PASSWORD}\" }' ${sourceAPIUrl}/v1/auth/engineering/engineering/login/${GIT_USERNAME} | jq -r .auth.client_token`",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "%ghd-d00-etl-platform ALL= NOPASSWD: /usr/bin/su - hd-d00-etl-platform ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "%ghd-d00-etl-platform ALL= NOPASSWD: /usr/bin/su - hd-doo-etl-platform ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "CAcreateserial -passin pass:$CAPASSWORD -sha256 ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "CAcreateserial -passin pass:$CAPASSWORD -shaabc ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "token=`curl -X POST -H \"X-Source-Namespace: engineering\" -d '{ \"password\": \"${GIT_PASSWORD}\" }' ${sourceAPIUrl}/v1/auth/src-engineer-a-prd/engineer/login/${GIT_USERNAME} | jq -r .auth.client_token` ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "'{ \"password\": \"${GIT_PASSWORD}\" }' sourceAPIUrl ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "'{ \"password\": \"${GIT_PASSWORD}\" }' ppsourceAPIUrlIUrlpp/vl/auth/vabasdfadfafasdfafd asdf asdfasdf asdf asf asfsdafds fsd fsdfasf asfasf as1 ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "{ \"password\": \"${GIT_PASSWORD}\" }' ${sourceAPIUrl}/v1/auth/src-cloud-prd/engineering/login/${GIT_USERNAME} | jq -r .auth.client_token` ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "\"client_secret\":\"why_hello-thereNumber1ar\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "client_secret:why_hello-thereNumber1ar",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "client_secret:why_hello-thereNumberlar",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "\"client_secret\":why_hello-thereNumber1ar ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "client_secret:\"why_hello-thereNumber1ar\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "\"Client_Secret\":\"why_hello-thereNumber1ar\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "authorization: basic QWxhZGRpbjpPcGVuU2VzYW1l ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my+_auth = blahblahblah ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my+_AUTH = blahblahblah ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "_auth = blahblahblah ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "_AUTH = blahblahblah ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "CAcreateserial -passin pass=$CAPASSWORD -sha256 ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pass=$variable_here something-else-here, thenANumber=1 ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd_variable_value = variable, user_variable_value = \"billyBob556\", favFood = \"ice cream\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd_variable_value = $variable, user_variable_value = \"billyBob556\", favFood = \"ice cream\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd_variable_value=\"$variable\", user_variable_value = \"billyBob556\", favFood = \"ice cream\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd_variable_value=\"${variable}\", user_variable_value = \"billyBob556\", favFood = \"ice cream\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd_variable_value=\"#{variable}\", user_variable_value = \"billyBob556\", favFood = \"ice cream\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd_variable_value=\"{{variable}}\", user_variable_value = \"billyBob556\", favFood = \"ice cream\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd_variable_value=\"{cari1able\", user_variable_value = \"billyBob556\", favFood = \"ice cream\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd_variable_value=\"$uper1able\", user_variable_value = \"billyBob556\", favFood = \"ice cream\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd_variable_value=\"Super1$able\", user_variable_value = \"billyBob556\", favFood = \"ice cream\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "passwd = \"{variable}\"; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd = \"{variable}\";",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " <Password value=\"{$pass_val}\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Passwd value=\"{pass_val}\" /><User value=\"billyBob\" /><Location value=\"1234 Johnny Ave.\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Pswd value=\"{{pass_val}}\" /><User value=\"billyBob\" /><Location value=\"1234 Johnny Ave.\"  ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Pwd value=\"${pass_val}\" /><User value=\"billyBob\" /><Location value=\"1234 Johnny Ave.\"  ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Password value=\"#{pass_val}\" /><User value=\"billyBob\" /><Location value=\"1234 Johnny Ave.\"  ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Passwd primary=\"{pass_val}\" /><User value=\"billyBob\" /><Location value=\"1234 Johnny Ave.\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Pswd primary=\"{{pass_val}}\" /><User value=\"billyBob\" /><Location value=\"1234 Johnny Ave.\"  ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Pwd primary=\"${pass_val}\" /><User value=\"billyBob\" /><Location value=\"1234 Johnny Ave.\"  ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Password primary=\"#{pass_val}\" /><User value=\"billyBob\" /><Location value=\"1234 Johnny Ave.\"  ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Secret primary=\"#{pass_val}\" /><User value=\"billyBob\" /><Location value=\"1234 Johnny Ave.\"  ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<secret primary=\"${pass_val}\" /><User value=\"billyBob\" /><Location value=\"1234 Johnny Ave.\"  ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<secret primary=\"hyugeV@lu3\" /><User value=\"billyBob\" /><Location value=\"1234 Johnny Ave.\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "my_auth = blahblahblah ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "my_AUTH = blahblahblah ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "CAcreateserial -passin pass=$CAPASSWORD -shaabc ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = ${GIT_PASSWORD}, user = ${GIT_USER}, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = $GIT_PASSWORD, user = papageorgio, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"{{variable_injection}}\", user = papageorgio, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"{{gotmy-secrethere}}\", user = papageorgio, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd={{variable_injection}}, user = papageorgio, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword(\"$test_variable\");location.setLocation(\"Origami Lane\");visitationFrequency(12); ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword(\"${test_variable}\");location.setLocation(\"Origami Lane\");visitationFrequency(12); ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword(\"#{test_variable}\");location.setLocation(\"Origami Lane\");visitationFrequency(12); ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword(\"{{test_variable}}\");location.setLocation(\"Origami Lane\");visitationFrequency(12); ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword(test_variable);location.setLocation(\"Origami Lane\");visitationFrequency(12); ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword(\"$uper_secr3t!\");location.setLocation(\"Origami Lane\");visitationFrequency(12); ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword(\"${trickyP@$$1\");location.setLocation(\"Origami Lane\");visitationFrequency(12); ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword(\"#{trickyP@$$1\");location.setLocation(\"Origami Lane\");visitationFrequency(12); ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "ntlmCredential.setPassword(\"{{secret_variable}}\");location.setLocation(\"Origami Lane\");visitationFrequency(12); ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: String \"$test_variable\", user: String \"scottie\", location: String \"Botswana\", address: String \"123 Not Real Ave.\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: String \"${test_variable}\", user: String \"scottie\", location: String \"Botswana\", address: String \"123 Not Real Ave.\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: String \"#{test_variable}\", user: String \"scottie\", location: String \"Botswana\", address: String \"123 Not Real Ave.\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: String \"{{test_variable}}\", user: String \"scottie\", location: String \"Botswana\", address: String \"123 Not Real Ave.\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: String \"$uper_secr3t!\", user: String \"scottie\", location: String \"Botswana\", address: String \"123 Not Real Ave.\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: String \"${trickyP@$$1\", user: String \"scottie\", location: String \"Botswana\", address: String \"123 Not Real Ave.\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: String \"#{trickyP@$$1\", user: String \"scottie\", location: String \"Botswana\", address: String \"123 Not Real Ave.\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: String \"{{secret_variable}}\", user: String \"scottie\", location: String \"Botswana\", address: String \"123 Not Real Ave.\",",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <password>${re@lvalU3</password><location>${address}</location><visitation_code>7</visitiation_code> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <password>%%vale-ofmyP@$shere</password><location>%%address%%</location><visitation_code>7</visitiation_code> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <password>%%{re@lvalU3</password><visitation_code>7</visitiation_code><location>%%address%%</location> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "  <password>%%variable_here%%</password><visitation_code>7</visitiation_code><location>%%address%%</location> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: ${GIT_PASSWORD}, user = ${GIT_USER}, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd: $GIT_PASSWORD, user = papageorgio, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "passwd: ${GIT_PASSWORD}, user = papageorgio, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: #{GIT_PASSWORD}, user = #{username}, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: #{$ecretV@lu3, user = #{username}, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "passwd: {{variable_injection}}, user = papageorgio, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "secret: {{variable_injection}}, user = papageorgio, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=${passvariable}</Value></Account><Overpass>thebridgeisout!!</Overpass><Overpass>thebridgeisout!!</Overpass> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = password1;lolz ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = $password; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = ${password}; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = #{password}; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd = pa$$word,kjl ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = $password1 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd = $uperStrong1! ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd = password; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd = password",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = password ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = {password} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = $uperStrongPassword ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = ${uperStrongPassword} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = Super$trongPassword ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = password1 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = p@ssw0rd ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = myPa$$word1 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = $uperStr0ngPassword ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = $password_variable ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=\"Pa$$w0rd1\"</Value></Account></Overpass>thebridgeisout!!</Overpass><Overpass>thebridgeisout!!</Overpass> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=\"${passvariable}\"</Value></Account><Overpass>thebridgeisout!!</Overpass><Overpass>thebridgeisout!!</Overpass> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"password1\";lolz ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = \"$password\"; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"${password}\"; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"#{password}\"; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd = \"pa$$wordkjl\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = \"$password1\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pswd = \"$uperStrong1!\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "pwd = \"password\"; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "pwd = \"password\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"password\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"{password}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"$password_variable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"$password_variable_longer\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"$password-variable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"${password_variable}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"$uperP@ssword\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = \"$toppingi$h@rd\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = \"$uperStrongPassword\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"${uperStrongPassword}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"Super$trongPassword\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = \"password1\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = \"p@ssw0rd\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = \"myPa$$word1\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = \"$uperStr0ngPassword\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "passwd=\"{{variable_injection}}\", user = papageorgio, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "temp-secret = secret_variable; ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=\"${password_variable}\"</Value><Account><Overpass>thebridgeisout!!<Overpass><Overpass>thebridgeisout!!<Overpass> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=${password_variable}</Value><Account><Overpass>thebridgeisout!!<Overpass><Overpass>thebridgeisout!!<Overpass> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=\"$password_variable\"</Value><Account><Overpass>thebridgeisout!!<Overpass><Overpass>thebridgeisout!!<Overpass> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=$password_variable;</Value><Account><Overpass>thebridgeisout!!<Overpass><Overpass>thebridgeisout!!<Overpass> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=\"${password_variable}\";more=garbage;some=thing_else;</Value><Account><Overpass>thebridgeisout!!<Overpass><Overpass>thebridgeisout!!<Overpass> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=${password_variable};more=garbage;some=thing_else;</Value><Account><Overpass>thebridgeisout!!<Overpass><Overpass>thebridgeisout!!<Overpass> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=\"$password_variable\";more=garbage;some=thing_else;</Value><Account><Overpass>thebridgeisout!!<Overpass><Overpass>thebridgeisout!!<Overpass> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "  <Account><Value>Data Source=ABDOO013;User Id=ABCDEFGHI1;Password=$password_variable;more=garbage;some=thing_else;</Value><Account><Overpass>thebridgeisout!!<Overpass><Overpass>thebridgeisout!!<Overpass> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = 1password ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password = \"1password\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: 1password ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: 1password ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: password ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: $uperStr0ng ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password :   1$password ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password : ${LA_PASSWORD} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password : ${L7_PASSWORD} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password : #{L7_PASSWORD} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password : ${1password ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password : #{1password ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password : $1password} ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password : #1password} ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password :    $1 ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: \"${SecretVar1}\", user: \"#{username}\", url: https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: #{SecretVar1}, user: #{username}, url: https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = \"${SecretVar1}\", user = \"#{username}\", url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password = #{SecretVar1}, user = #{username}, url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: #{$ecretV@lu3, user: #{username}, url: https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: ${$ecretV@lu3, user: #{username}, url: https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: {$ecretV@lu3, user: #{username}, url: https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: #{$ecretV@lu3, user: #{username}, url: https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = {$ecretV@lu3, user: #{username}, url: https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = ${$ecretV@lu3, user: #{username}, url: https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: \"#{$ecretV@lu3\", user: \"#{username}\", url: https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: \"${$ecretV@lu3\", user: \"#{username}\", url: https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: \"{$ecretV@lu3\", user: \"#{username}\", url: https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: \"#{$ecretV@lu3\", user: \"#{username}\", url: https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = \"{$ecretV@lu3\", user = \"#{username}\", url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password = \"${$ecretV@lu3\", user = \"#{username}\", url = https://woopwoopnotarealsite.com/10min ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password value='{eor4duder1!' data='{user_var}' /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password value='{variable1}' data='{user_var}' /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Password value='${eor4duder1!' data='{user_var}' /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password value='${variable1}' data='{user_var}' /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Password value='#{eor4duder1!' data='{user_var}' /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password value='#{variable1}' data='{user_var}' /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "password: String \"${test_value\", user: String \"${variable}\", location: String \"Botswana\", address: String \"123 Not Real Ave.\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: String \"#{test_value\", user: String \"#{variable}\", location: String \"Botswana\", address: String \"123 Not Real Ave.\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "password: String \"{{test_value\", user: String \"{{variable}}\", location: String \"Botswana\", address: String \"123 Not Real Ave.\",",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password primary=\"${pass_val1\" /><User value=\"${variable}\" /><Location value=\"1234 Johnny Ave.\"  ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Secret primary=\"#{pass_val1\" /><User value=\"#{variable}\" /><Location value=\"1234 Johnny Ave.\"  ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "<Password primary=\"${pass_var}\" /><User value=\"${variable}\" /><Location value=\"1234 Johnny Ave.\"  ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<Secret primary=\"#{pass_var}\" /><User value=\"#{variable}\" /><Location value=\"1234 Johnny Ave.\"  ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = usr/bin/local/pwd ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = p@ssword ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password = password ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = USER_CLIENT_PASSWORD ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = passw0rd ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password = 1password ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password = $password ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = ${password} ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = $password1 ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password = \"usr/bin/local/pwd\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = \"p@ssword\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password = \"password\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = \"USER_CLIENT_PASSWORD\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = \"passw0rd\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password = \"1password\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " password = \"$password\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = \"${password}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password = \"$password1\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " secret_key value=\"yolo123\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " secret_key value=\"secretKeyVariable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret_key value=\"SECRET_KEY_VARIABLE\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret_key value=\"$VARIABLE\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret_key value=\"$uperStrong1\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " secret_key value=\"usr/bin/local/key\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret_key value=\"${SECRET_KEY}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " pwd primary=\"yolo123\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " pwd primary=\"secretKeyVariable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " pwd primary=\"SECRET_KEY_VARIABLE\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " pwd primary=\"$VARIABLE\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " pwd primary=\"$uperStrong1\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " pwd primary=\"usr/bin/local/key\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " pwd primary=\"${SECRET_KEY}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " setPassword(\"yolo123\"); ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " setPassword(\"secretPassVariable\"); ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " setPassword(\"SECRET_PWD_VARIABLE\"); ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " setPassword(\"$VARIABLE\"); ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " setPassword(\"$uperStrong1\"); ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " setPassword(\"usr/bin/local/pwd\"); ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " setPassword(\"${SECRET_PWD}\"); ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret: String \"yolo123\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " secret: String \"secretKeyVariable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret: String \"SECRET_KEY_VARIABLE\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret: String \"$VARIABLE\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret: String \"$uperStrong1\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " secret: String \"usr/bin/local/key\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret: String \"${SECRET_KEY}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " password:1password ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " api_key=\"${api_key}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " api_key=\"api_key_variable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " api_key=\"apiKeyVariable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " accessKey = \"access_key\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret-key: \"secretKeyVariable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " api_key=\"$api_key_variable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " api_key=\"$apiKeyVariable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " accessKey = \"$access_key\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret-key: \"$secretKeyVariable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " api_key=\"${api_key_variable}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " api_key=\"${apiKeyVariable}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " accessKey = \"${access_key}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret-key: \"${secretKeyVariable}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " api_key=\"#{api_key_variable}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " api_key=\"#{apiKeyVariable}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " accessKey = \"#{access_key}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " secret-key: \"#{secretKeyVariable}\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " applicationKey:\"my_app_key\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "AppKey = \"AppKeyVariable\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": " apiKey: \"/usr/bin/local/apikey\" ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<property name=\"MANAGE_PREF_SECRET_KEY\" value=\"ManagePreferenceKey\" /> ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "function(y){return var le={accesskey:\"accessKey\",allowfullscreen:\"allowFullScreen\",allowtransparency:\"allowTransparency\", ",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "<add key=\"AppSecretId\" value=\"c75e7b5c-994d-2bee-7c98-c8c9f4688ee4\" /> ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " applicationKey:\"m1bsdgfjllcd\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " api_key=\"abc1def2ghi3jkl4_5769rrg\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " secret-key: \"p@ndasAreCute\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " secret-key = \"pandasAre$oCute\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": " secret-key = 'pandasAreCut3' ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "AppKey = \"App2-k3569_ryfjd7\" ",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "AppKey = \"App2-k3569_ryfjd7\" ",
+      "ShouldMatch": true
+    }
+  ]
+  
