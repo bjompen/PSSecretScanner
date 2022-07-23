@@ -108,26 +108,6 @@
       "ShouldMatch": false
     },
     {
-      "Pattern": "-----beGIN RsA PRIvate KEy-----",
-      "ShouldMatch": false
-    },
-    {
-      "Pattern": "------begin OPenSSH priVATE KeY-----",
-      "ShouldMatch": false
-    },
-    {
-      "Pattern": "   -----bEgIn DsA pRiVaTe kEY-----",
-      "ShouldMatch": false
-    },
-    {
-      "Pattern": "------beGIN ec PRivaTE keY-----",
-      "ShouldMatch": false
-    },
-    {
-      "Pattern": "-----BeGiN PGP PRiVaTe KeY BLoCK-----",
-      "ShouldMatch": false
-    },
-    {
       "Pattern": "Client Secret == 'VIviyomam13lC-1335532dd23g'",
       "ShouldMatch": true
     },
@@ -1502,10 +1482,6 @@
     {
       "Pattern": "xoxp-12345678901-123456789012-123456789012-dc82b1510a492cf2087dd72cdb9860fb",
       "ShouldMatch": true
-    },
-    {
-      "Pattern": "XoXp-12345678901-123456789012-123456789012-dc82b1510a492cf2087dd72cdb9860fb",
-      "ShouldMatch": false
     },
     {
       "Pattern": "\"client_secret\": \"1bcdabcdabcdabcdabcdabcdabcdabcdabcdabcd\",",
@@ -3558,10 +3534,6 @@
     {
       "Pattern": "\"Client_Secret\":\"why_hello-thereNumber1ar\" ",
       "ShouldMatch": true
-    },
-    {
-      "Pattern": "authorization: basic QWxhZGRpbjpPcGVuU2VzYW1l ",
-      "ShouldMatch": false
     },
     {
       "Pattern": "my+_auth = blahblahblah ",

@@ -11,20 +11,20 @@ $TestCases = Get-Content $TestCasesFile | ConvertFrom-Json
 $ShouldFindPatterns = $TestCases | Where-Object -Property ShouldMatch -EQ $True
 $ShouldNotFindPatterns = $TestCases | Where-Object -Property ShouldMatch -EQ $False
 
-Describe 'Patterns that should be found' {
+Describe 'Pattern verification tests' {
     BeforeEach {
         if (Test-Path TestDrive:\MatchFile.txt) {
             Remove-Item TestDrive:\MatchFile.txt
         }
     }
-    Context 'Should find patterns' {
+    Context 'Should find patterns' -Tag 'match' {
         It 'Should find pattern <_.Pattern>' -TestCases $ShouldFindPatterns {
             $_.Pattern | Out-File TestDrive:\MatchFile.txt
             $r = Find-Secret -Path TestDrive:\MatchFile.txt -OutputPreference Object
-            $r.count | Should -Be 1
+            $r.count | Should -BeGreaterOrEqual 1
         }
     }
-    Context 'Should not find patterns' {
+    Context 'Should not find patterns' -Tag 'notmatch' {
         It 'Should not find pattern <_.Pattern>' -TestCases $ShouldNotFindPatterns {
             $_.Pattern | Out-File TestDrive:\MatchFile.txt
             $r = Find-Secret -Path TestDrive:\MatchFile.txt -OutputPreference Object
