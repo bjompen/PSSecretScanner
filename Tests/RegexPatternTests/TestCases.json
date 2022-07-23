@@ -4502,6 +4502,38 @@
     {
       "Pattern": "AppKey = \"App2-k3569_ryfjd7\" ",
       "ShouldMatch": true
+    },
+    {
+      "Pattern": "dn5tsuxazrm5gjasuohvarpc2wfumykqbk2tp2zwalprik4iwisq",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "kboa4vhxii374or37gguouofhojcmiqwenznveoi5oty74lxmxwq",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "xsdxxqeo63dfytxd5nvz62u6igciuqksq7e253jlf3uratodftia",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "$pat = 'dn5tsuxazrm5gjasuohvarpc2wfumykqbk2tp2zwalprik4iwisq'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "   $PaT  =   \"kboa4vhxii374or37gguouofhojcmiqwenznveoi5oty74lxmxwq\"",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "$PAT='xsdxxqeo63dfytxd5nvz62u6igciuqksq7e253jlf3uratodftia'",
+      "ShouldMatch": true
+    },
+    {
+      "Pattern": "xsdxxqeo63dfytxd5nvz62u6igciuqksq7e253jlf3uratodf",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "$pat = 'dn5tsuxazrm5gjasuohvarpc2wfumykqbk2tp2zwalprik4iw'",
+      "ShouldMatch": false
     }
-  ]
+]
   

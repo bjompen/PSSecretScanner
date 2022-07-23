@@ -26,6 +26,7 @@
       {"_Heroku_Key":"heroku.{0,30}[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"},
       {"_Azure_AccountKey":"AccountKey\\s+=\\s+[a-zA-Z0-9+\/=]{88}"},
       {"_PWSH_Personal_Acces_Token_PAT":"\\$pat\\s*=\\s*['\"][a-z0-9]{52}['\"]"},
+      {"_Personal_Acces_Token_PAT":"(\\s|^)[a-z0-9]{52}(\\s|$)"},
       {"_Cloudinary":"cloudinary://.*"},
       {"_Firebase_URL":".*firebaseio\\.com"},
       {"_Amazon_MWS_Auth_Token":"amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"},
