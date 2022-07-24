@@ -1,3 +1,5 @@
+![PSSecurityScanner logo goes here](.\pssecurityscanner.png)
+
 # PSSecretScanner
 
 Super simple passwordscanner built using PowerShell.
@@ -51,6 +53,11 @@ Yes, even keeping it simple there are stuff I might want to add some day, or if 
 
 ## Changelog
 
+- 2022-07-24
+  - Added a pattern for personal access token
+  - Added tests for regex patterns (some, not all of them)
+  - Added unit tests for some functions (WIP)
+  - Added the logo, becuse it's fun to draw stuff.
 - 1.0.7, 2022-07-22
   - This is the first changelog entry so anything before this is without dates. ([#5](https://github.com/bjompen/PSSecretScanner/issues/5))
   - Refactored the module to a folder structure. ([#10](https://github.com/bjompen/PSSecretScanner/issues/10))
