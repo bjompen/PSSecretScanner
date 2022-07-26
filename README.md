@@ -53,6 +53,8 @@ Yes, even keeping it simple there are stuff I might want to add some day, or if 
 
 ## Changelog
 
+- 2022-07-26
+  - Moved GetConfig to external helper function in order to make Find-Secret easier to write tests for.
 - 2022-07-24
   - Added a pattern for personal access token
   - Added tests for regex patterns (some, not all of them)
