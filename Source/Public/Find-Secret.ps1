@@ -1,40 +1,62 @@
 function Find-Secret {
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName = 'Path')]
     param (
+        [Parameter(ParameterSetName = 'Path', Position = 0)]
         [ValidateScript({ AssertParameter -ScriptBlock {Test-Path $_} -ErrorMessage "Path not found." })]
         [string[]]$Path = "$PWD",
+        
+        [Parameter(ParameterSetName = 'File', Position = 0)]
+        [ValidateScript({ AssertParameter -ScriptBlock {Test-Path $_} -ErrorMessage "File not found." })]
+        [string]$File,
 
+        [Parameter()]
         [ValidateSet('Output','Warning','Error','Object')]
         [string]$OutputPreference = 'Error',
 
+        [Parameter()]
         [string]$ConfigPath = $script:PSSSConfigPath,
 
+        [Parameter()]
         [ValidateScript({ AssertParameter -ScriptBlock {Test-Path $_} -ErrorMessage "Excludelist path not found." })]
         [string]$Excludelist,
 
+        [Parameter(ParameterSetName = 'Path')]
         [string[]]$Filetype
     )
 
     $Config = GetConfig -ConfigPath $ConfigPath
 
-    if ($Filetype -and $Filetype.Contains('*')) {
-        $ScanFiles = Get-ChildItem $Path -File -Recurse
-    }
-    elseif ($Filetype) {
-        $ScanExtensions = $Filetype | ForEach-Object {
-            if (-not $_.StartsWith('.')) {
-                ".$_"
+    switch ($PSCmdLet.ParameterSetName) {
+        'Path' { 
+            if ( ($Path.Count -eq 1) -and ((Get-Item $Path[0]) -is [System.IO.FileInfo]) ) {
+                Throw 'Use the -File parameter to scan single files'
             }
             else {
-                $_
+                if ($Filetype -and $Filetype.Contains('*')) {
+                    [Array]$ScanFiles = Get-ChildItem $Path -File -Recurse
+                }
+                elseif ($Filetype) {
+                    $ScanExtensions = $Filetype | ForEach-Object {
+                        if (-not $_.StartsWith('.')) {
+                            ".$_"
+                        }
+                        else {
+                            $_
+                        }
+                    }
+                    [Array]$ScanFiles = Get-ChildItem $Path -File -Recurse | Where-Object -Property Extension -in $ScanExtensions
+                
+                }
+                else {
+                    [Array]$ScanFiles = Get-ChildItem $Path -File -Recurse | Where-Object -Property Extension -in $Config['fileextensions']
+                }
             }
+         }
+        'File' {
+            [Array]$ScanFiles = Get-ChildItem $File -File 
         }
-        $ScanFiles = Get-ChildItem $Path -File -Recurse | Where-Object -Property Extension -in $ScanExtensions
-    
     }
-    else {
-        $ScanFiles = Get-ChildItem $Path -File -Recurse | Where-Object -Property Extension -in $Config['fileextensions']
-    }
+
 
     Write-Verbose "Scanning files:`n$($ScanFiles.FullName -join ""`n"")"
 
