@@ -28,7 +28,7 @@
       {"_PWSH_Personal_Acces_Token_PAT":"\\$pat\\s*=\\s*['\"][a-z0-9]{52}['\"]"},
       {"_Personal_Acces_Token_PAT":"(\\s|^)[a-z0-9]{52}(\\s|$)"},
       {"_Cloudinary":"cloudinary://.*"},
-      {"_Firebase_URL":".*firebaseio\\.com"},
+      {"_Firebase_URL":"firebaseio\\.com"},
       {"_Amazon_MWS_Auth_Token":"amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"},
       {"_Facebook_Access_Token":"EAACEdEose0cBA[0-9A-Za-z]+"},
       {"_Facebook_OAuth":"[f|F][a|A][c|C][e|E][b|B][o|O][o|O][k|K].*['|\"][0-9a-f]{32}['|\"]"},
