@@ -1,3 +1,5 @@
+#Requires -Version 7
+
 Remove-Module PSSecretScanner -Force -ErrorAction SilentlyContinue
 Import-Module $PSScriptRoot\..\..\Source\PSSecretScanner -Force
 
@@ -49,5 +51,51 @@ Describe 'Find-Secret' {
             $r = Find-Secret $TestFile -OutputPreference Object
             $r.count | Should -Be 1
         }
+    
+    }
+
+    Context 'Functionality - Exclusion list' {
+        BeforeAll {
+            $TestFile = 'TestDrive:\TestFile.ps1'
+    
+            # Create a test file
+            'pat1' | Out-File -FilePath $TestFile -Force
+    
+            # Mock for parameter validation. Tested in separate test file
+            Mock -CommandName AssertParameter -ModuleName PSSecretScanner -MockWith {
+                return $true
+            }
+            
+            # Mock to always return one file to scan
+            Mock -CommandName Get-ChildItem -ModuleName PSSecretScanner -MockWith {
+                @{
+                    FullName = $TestFile 
+                    Extension = '.ps1'
+                }
+            } -ParameterFilter {$Path -and $File -and $Recurse}
+            
+            # Mock GetConfig - wrapper function to make Find-Secret testable
+            Mock -CommandName GetConfig -ModuleName PSSecretScanner -MockWith {
+                return '{"regexes":[{"_Pattern1":"pat1"},{"_Pattern2":"pat2"}],"fileextensions":[".ps1",".ps2"]}' | ConvertFrom-Json -AsHashtable
+            }
+        }
+
+        It 'If an exclusion list is given it should excluse matches - zero results' {
+            Mock -CommandName GetExclusions -ModuleName PSSecretScanner -MockWith {
+                return "$((resolve-path TestDrive:\TestFile.ps1).ProviderPath);1;pat1"
+            }
+            $r = Find-Secret $TestFile -OutputPreference Object -Excludelist 'TestDrive:\TestFile.ps1'
+            $r.count | Should -Be 0
+        }
+
+        It 'If an exclusion list is given it should excluse matches - one result' {
+            "pat1`npat2" | Out-File -FilePath $TestFile -Force
+            Mock -CommandName GetExclusions -ModuleName PSSecretScanner -MockWith {
+                return "$((resolve-path TestDrive:\TestFile.ps1).ProviderPath);1;pat1"
+            }
+            $r = Find-Secret $TestFile -OutputPreference Object -Excludelist 'TestDrive:\TestFile.ps1'
+            $r.count | Should -Be 1
+        }
+
     }
 }

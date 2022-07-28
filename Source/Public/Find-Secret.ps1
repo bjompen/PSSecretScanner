@@ -48,7 +48,7 @@ function Find-Secret {
     }
     
     if (-not [string]::IsNullOrEmpty($Excludelist)) {
-        [string[]]$Exclusions = Get-Content $Excludelist
+        [string[]]$Exclusions = GetExclusions $Excludelist
         Write-Verbose "Using excludelist $Excludelist. Found $($Exclusions.Count) exlude strings."
 
         $Res = $Res | Where-Object {

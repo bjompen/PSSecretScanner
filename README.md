@@ -53,12 +53,16 @@ Yes, even keeping it simple there are stuff I might want to add some day, or if 
 
 ## Changelog
 
+- 2022-07-28
+  - Added tests for Find-Secret ([#11](https://github.com/bjompen/PSSecretScanner/issues/11))
+  - Corrected logo (Really, how the hell does one write the wrong name! 🤦)
+  - Moved GetExclusions to private function to make it easier to mock ([#11](https://github.com/bjompen/PSSecretScanner/issues/11))
 - 2022-07-26
-  - Moved GetConfig to external helper function in order to make Find-Secret easier to write tests for.
+  - Moved GetConfig to external helper function in order to make Find-Secret easier to write tests for. ([#11](https://github.com/bjompen/PSSecretScanner/issues/11))
 - 2022-07-24
   - Added a pattern for personal access token
-  - Added tests for regex patterns (some, not all of them)
-  - Added unit tests for some functions (WIP)
+  - Added tests for regex patterns (some, not all of them) ([#11](https://github.com/bjompen/PSSecretScanner/issues/11))
+  - Added unit tests for some functions (WIP) ([#11](https://github.com/bjompen/PSSecretScanner/issues/11))
   - Added the logo, becuse it's fun to draw stuff.
 - 1.0.7, 2022-07-22
   - This is the first changelog entry so anything before this is without dates. ([#5](https://github.com/bjompen/PSSecretScanner/issues/5))
