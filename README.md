@@ -1,4 +1,4 @@
-![PSSecurityScanner logo goes here](./pssecurityscanner.png)
+![PSSecretScanner logo goes here](./PSSecretScanner.png)
 
 # PSSecretScanner
 
