@@ -60,40 +60,44 @@ function Find-Secret {
         }
     }
 
+    if ($ScanFiles.Count -ge 1) {
+        Write-Verbose "Scanning files:`n$($ScanFiles.FullName -join ""`n"")"
 
-    Write-Verbose "Scanning files:`n$($ScanFiles.FullName -join ""`n"")"
+        $Res = $Config['regexes'].Keys | ForEach-Object {
+            $RegexName = $_
+            $Pattern = ($Config['regexes'])."$RegexName"
 
-    $Res = $Config['regexes'].Keys | ForEach-Object {
-        $RegexName = $_
-        $Pattern = ($Config['regexes'])."$RegexName"
+            Write-Verbose "Performing $RegexName scan`nPattern '$Pattern'`n"
 
-        Write-Verbose "Performing $RegexName scan`nPattern '$Pattern'`n"
+            Get-Item $ScanFiles.FullName | Select-String -Pattern $Pattern
+        }
+        
+        if (-not [string]::IsNullOrEmpty($Excludelist)) {
+            [string[]]$Exclusions = GetExclusions $Excludelist
+            Write-Verbose "Using excludelist $Excludelist. Found $($Exclusions.Count) exlude strings."
 
-        Get-Item $ScanFiles.FullName | Select-String -Pattern $Pattern
-    }
-    
-    if (-not [string]::IsNullOrEmpty($Excludelist)) {
-        [string[]]$Exclusions = GetExclusions $Excludelist
-        Write-Verbose "Using excludelist $Excludelist. Found $($Exclusions.Count) exlude strings."
+            $Res = $Res | Where-Object {
+                "$($_.Path);$($_.LineNumber);$($_.Line)" -notin $Exclusions
+            }
+        }
+        
+        $Result = "Found $($Res.Count) strings.`n"
 
-        $Res = $Res | Where-Object {
-            "$($_.Path);$($_.LineNumber);$($_.Line)" -notin $Exclusions
+        if ($res.Count -gt 0) {
+            $Result += "Path`tLine`tLineNumber`tPattern`n"
+            foreach ($line in $res) {
+                $Result += "$($line.Path)`t$($line.Line)`t$($line.LineNumber)`t$($line.Pattern)`n"
+            }
         }
     }
-    
-    $Result = "Found $($Res.Count) strings.`n"
-
-    if ($res.Count -gt 0) {
-        $Result += "Path`tLine`tLineNumber`tPattern`n"
-        foreach ($line in $res) {
-            $Result += "$($line.Path)`t$($line.Line)`t$($line.LineNumber)`t$($line.Pattern)`n"
+    else {
+        $Result = 'Found no files to scan'
+        $res = @()
+    }
+        switch ($OutputPreference) {
+            'Output'  { Write-Output $Result }
+            'Warning' { Write-Warning $Result }
+            'Error'   { Write-Error $Result }
+            'Object'  { $res }
         }
-    }
-
-    switch ($OutputPreference) {
-        'Output'  { Write-Output $Result }
-        'Warning' { Write-Warning $Result }
-        'Error'   { Write-Error $Result }
-        'Object'  { $res }
-    }
 }
