@@ -5,7 +5,7 @@ Import-Module $PSScriptRoot\..\..\Source\PSSecretScanner -Force
 
 Describe 'Find-Secret' {
     Context 'Basic design tests' {
-        It 'Should have non mandatory parameter <_>' -TestCases 'Path', 'OutputPreference', 'ConfigPath', 'Excludelist', 'Filetype', 'File' {
+        It 'Should have non mandatory parameter <_>' -TestCases 'Path', 'OutputPreference', 'ConfigPath', 'Excludelist', 'Filetype', 'File', 'Recursive' {
             Get-Command Find-Secret | Should -HaveParameter $_ -Because 'If parameters change behaviour we need to do a major bump'
         }
 
@@ -136,14 +136,19 @@ Describe 'Find-Secret' {
         }
     }
 
-    Context 'Functionality - ParameterSet Path' {
-        BeforeAll {
+    Context 'Functionality - ParameterSet "Path"' {
+        BeforeEach {
+            # Start every test by cleaning up and recreating test environment
+
+            Get-ChildItem TestDrive:\ | Remove-Item -Recurse
             $TestFile = 'TestDrive:\TestFile.ps1'
             $ScanFolder = Split-Path $TestFile
     
             # Create a test file
             'pat1' | Out-File -FilePath $TestFile -Force
-    
+        }
+        
+        BeforeAll {
             # Mock for parameter validation. Tested in separate test file
             Mock -CommandName AssertParameter -ModuleName PSSecretScanner -MockWith {
                 return $true
@@ -185,6 +190,17 @@ Describe 'Find-Secret' {
 
         It 'Given only a file it should work as expected' {
             $r = Find-Secret 'TestDrive:\TestFile.ps1' -OutputPreference Object
+            $r.count | Should -Be 1
+        }
+
+        It 'If recursive is _not_ set we should only scan root dir' {
+            # Make sure we have a subfolder tree with at least three matching files.
+            New-Item 'TestDrive:\Folder1\' -ItemType Directory
+            New-Item 'TestDrive:\Folder2\' -ItemType Directory
+            'pat1' | Out-File -FilePath TestDrive:\Folder1\file1.ps1 -Force
+            'pat1' | Out-File -FilePath TestDrive:\Folder2\file2.ps1 -Force
+
+            $r = Find-Secret $ScanFolder -Recursive:$false -OutputPreference Object
             $r.count | Should -Be 1
         }
     }
