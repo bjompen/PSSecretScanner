@@ -4,6 +4,12 @@ function Find-Secret {
         [Parameter(ParameterSetName = 'Path', Position = 0)]
         [ValidateScript({ AssertParameter -ScriptBlock {Test-Path $_} -ErrorMessage "Path not found." })]
         [string[]]$Path = "$PWD",
+
+        [Parameter(ParameterSetName = 'Path')]
+        [string[]]$Filetype,
+
+        [Parameter(ParameterSetName = 'Path')]
+        [bool]$Recursive = $true,
         
         [Parameter(ParameterSetName = 'File', Position = 0)]
         [ValidateScript({ AssertParameter -ScriptBlock {Test-Path $_} -ErrorMessage "File not found." })]
@@ -18,10 +24,7 @@ function Find-Secret {
 
         [Parameter()]
         [ValidateScript({ AssertParameter -ScriptBlock {Test-Path $_} -ErrorMessage "Excludelist path not found." })]
-        [string]$Excludelist,
-
-        [Parameter(ParameterSetName = 'Path')]
-        [string[]]$Filetype
+        [string]$Excludelist
     )
 
     $Config = GetConfig -ConfigPath $ConfigPath
@@ -33,7 +36,7 @@ function Find-Secret {
             }
             else {
                 if ($Filetype -and $Filetype.Contains('*')) {
-                    [Array]$ScanFiles = Get-ChildItem $Path -File -Recurse
+                    [Array]$ScanFiles = Get-ChildItem $Path -File -Recurse:$Recursive
                 }
                 elseif ($Filetype) {
                     $ScanExtensions = $Filetype | ForEach-Object {
@@ -44,11 +47,11 @@ function Find-Secret {
                             $_
                         }
                     }
-                    [Array]$ScanFiles = Get-ChildItem $Path -File -Recurse | Where-Object -Property Extension -in $ScanExtensions
+                    [Array]$ScanFiles = Get-ChildItem $Path -File -Recurse:$Recursive | Where-Object -Property Extension -in $ScanExtensions
                 
                 }
                 else {
-                    [Array]$ScanFiles = Get-ChildItem $Path -File -Recurse | Where-Object -Property Extension -in $Config['fileextensions']
+                    [Array]$ScanFiles = Get-ChildItem $Path -File -Recurse:$Recursive | Where-Object -Property Extension -in $Config['fileextensions']
                 }
             }
          }
