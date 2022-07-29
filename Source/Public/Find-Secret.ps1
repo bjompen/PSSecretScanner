@@ -29,7 +29,7 @@ function Find-Secret {
     switch ($PSCmdLet.ParameterSetName) {
         'Path' { 
             if ( ($Path.Count -eq 1) -and ((Get-Item $Path[0]) -is [System.IO.FileInfo]) ) {
-                Throw 'Use the -File parameter to scan single files'
+                [Array]$ScanFiles = Get-ChildItem $Path[0] -File 
             }
             else {
                 if ($Filetype -and $Filetype.Contains('*')) {
@@ -66,7 +66,7 @@ function Find-Secret {
 
         Write-Verbose "Performing $RegexName scan`nPattern '$Pattern'`n"
 
-        Get-ChildItem $ScanFiles.FullName | Select-String -Pattern $Pattern
+        Get-Item $ScanFiles.FullName | Select-String -Pattern $Pattern
     }
     
     if (-not [string]::IsNullOrEmpty($Excludelist)) {

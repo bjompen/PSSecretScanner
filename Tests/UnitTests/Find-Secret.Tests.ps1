@@ -183,8 +183,9 @@ Describe 'Find-Secret' {
             $r.count | Should -Be 2
         }
 
-        It 'Given only a file it should throw' {
-            {Find-Secret 'TestDrive:\Folder2\file2.ps1' -OutputPreference Object} | Should -Throw
+        It 'Given only a file it should work as expected' {
+            $r = Find-Secret 'TestDrive:\TestFile.ps1' -OutputPreference Object
+            $r.count | Should -Be 1
         }
     }
 }

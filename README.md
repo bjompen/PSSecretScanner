@@ -53,6 +53,11 @@ Yes, even keeping it simple there are stuff I might want to add some day, or if 
 
 ## Changelog
 
+- 2022-07-29
+  - Change from Get-ChildItem to Get-Item which is marginaly faster. (2 seconds/10000 objects)
+- 2022-07-28
+  - Added `-File` parameter ([#12](https://github.com/bjompen/PSSecretScanner/issues/12))
+  - Changed the **firebaseio** pattern to make scanning faster.
 - 2022-07-28
   - Added tests for Find-Secret ([#11](https://github.com/bjompen/PSSecretScanner/issues/11))
   - Corrected logo (Really, how the hell does one write the wrong name! 🤦)
