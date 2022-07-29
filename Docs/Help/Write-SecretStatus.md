@@ -31,11 +31,10 @@ To add output to your default prompt, create or edit your prompt function and ad
 
 To add this to your posh-git prompt add the following to your `$PROFILE` script **after the `Import-Module posh-git` statement!**
 
-```PowerShell
 $GitPromptSettings.DefaultPromptBeforeSuffix.Text = ' $(Write-SecretStatus)'
-# You may also change the default white console output colour by running 
+
+You may also change the default white console output colour by running 
 $GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 'LightBlue' # or any other colour of choice..
-```
 
 ---
 

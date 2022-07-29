@@ -4,7 +4,7 @@
 [string]$ModuleSourcePath = "$PSScriptRoot\Source"
 [string]$HelpSourcePath = "$PSScriptRoot\Docs\Help"
 
-[string]$Version = '1.0.7'
+[string]$Version = '1.0.8'
 
 [string]$OutputPath = "$PSScriptRoot\Bin\$ModuleName\$Version"
 
@@ -21,6 +21,7 @@ task Clean {
 
 task Unit_Tests {
     # .$PSScriptRoot\Tests\TestRunner.ps1 -Verbosity Normal -CodeCoverage
+    Invoke-Pester .\Tests -Output Detailed
 }
 
 task RunScriptAnalyzer {

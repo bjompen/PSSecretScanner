@@ -53,10 +53,10 @@ Yes, even keeping it simple there are stuff I might want to add some day, or if 
 
 ## Changelog
 
-- 2022-07-29
+- 1.0.8, 2022-07-29
   - Change from Get-ChildItem to Get-Item which is marginaly faster. (2 seconds/10000 objects)
   - Add boolean-Recurse parameter defaulted to $true to support non recursive scans ([#18](https://github.com/bjompen/PSSecretScanner/issues/18))
-  - Added Write-SecretStatur to add to posh-git profile.
+  - Added Write-SecretStatus to add to posh-git profile ([#8](https://github.com/bjompen/PSSecretScanner/issues/8).
 - 2022-07-28
   - Added `-File` parameter ([#12](https://github.com/bjompen/PSSecretScanner/issues/12))
   - Changed the **firebaseio** pattern to make scanning faster.
