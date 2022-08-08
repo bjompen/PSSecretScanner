@@ -33,14 +33,28 @@ To add this to your posh-git prompt add the following to your `$PROFILE` script 
 
 $GitPromptSettings.DefaultPromptBeforeSuffix.Text = ' $(Write-SecretStatus)'
 
-You may also change the default white console output colour by running 
-$GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 'LightBlue' # or any other colour of choice..
+It will automatically set the output to red if secrets are found.
+
+If you have a file named `.ignoresecrets` in the rootfolder of your git repo it will use this for exclusions.
 
 ---
 
 You _may_ also add this to your oh-my-posh thing, but I don't use it and have no idea how that works.
 
 ## EXAMPLES
+
+### EXAMPLE 8
+
+```PowerShell
+$GitRoot = git rev-parse --show-toplevel
+$IgnoreFile = Join-Path -Path  $GitRoot -ChildPath '.ignoresecrets'
+Find-Secret -Path $GitRoot -OutputPreference IgnoreSecrets | Out-File $IgnoreFile -Force
+```
+
+This command will find the root folder of the current git repo,
+and create a file called .ignoresecrets in it.
+It will output _all_ secrets currently found in the repository in to that folder in the correct format for an ignore file.
+It will then automatically pick this file up as IgnoreFile when running Write-SecretStatus.
 
 ## PARAMETERS
 

@@ -7,7 +7,28 @@ function Write-SecretStatus {
             break
         }
         else {
-            $SecretsCount = (Find-Secret -Recursive:$false -OutputPreference Object).Count
+            $FindSplat = @{
+                Recursive = $false
+                OutputPreference = 'Object'
+            }
+
+            $ExcludePath = Join-Path -Path  (git rev-parse --show-toplevel) -ChildPath '.ignoresecrets'
+            if (Test-Path $ExcludePath) {
+                $FindSplat.Add('Excludelist',$ExcludePath)
+            }
+
+            $Secrets = Find-Secret @FindSplat
+            $SecretsCount = $Secrets.Count
+
+            if ((Get-Command Prompt).ModuleName -eq 'posh-git') {
+                if ($SecretsCount -ge 1) {
+                    $GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 'Red'
+                }
+                else {
+                    $GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 'LightBlue'
+                }
+            }
+            
             Write-Output "[$SecretsCount]" 
         }
     }

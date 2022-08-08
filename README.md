@@ -22,6 +22,8 @@ C:\MyFiles\template.json;51;-----BEGIN RSA PRIVATE KEY-----
 C:\MyRepo\MyModule.psm1:18:password = supersecret!!
 ```
 
+To have `Write-SecretStatus` automatically pick up and use your ignore list for all your repo, name your excludelist `.ignoresecrets` and put it in your repo root folder!
+
 ## Installation
 
 - From the PSGallery, run `Install-Module PSSecretScanner`
@@ -53,6 +55,10 @@ Yes, even keeping it simple there are stuff I might want to add some day, or if 
 
 ## Changelog
 
+- 2022-08-08
+  - Added `-OutputPreference IgnoreSecrets` To make it easer to manage ExcludeLists. See help documentation for example.
+  - Added support for ignorelist in Write-SecretStatus.
+  - Added colours to Write-SecretStatus.
 - 1.0.8, 2022-07-29
   - Change from Get-ChildItem to Get-Item which is marginaly faster. (2 seconds/10000 objects)
   - Add boolean-Recurse parameter defaulted to $true to support non recursive scans ([#18](https://github.com/bjompen/PSSecretScanner/issues/18))

@@ -1,4 +1,5 @@
 **/ExcludeList*
+**/.ignoresecrets*
 
 # Testcoverage output from pester
 **/coverage.xml

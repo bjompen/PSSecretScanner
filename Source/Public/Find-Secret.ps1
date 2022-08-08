@@ -16,7 +16,7 @@ function Find-Secret {
         [string]$File,
 
         [Parameter()]
-        [ValidateSet('Output','Warning','Error','Object')]
+        [ValidateSet('Output','Warning','Error','Object','IgnoreSecrets')]
         [string]$OutputPreference = 'Error',
 
         [Parameter()]
@@ -84,9 +84,17 @@ function Find-Secret {
         $Result = "Found $($Res.Count) strings.`n"
 
         if ($res.Count -gt 0) {
-            $Result += "Path`tLine`tLineNumber`tPattern`n"
-            foreach ($line in $res) {
-                $Result += "$($line.Path)`t$($line.Line)`t$($line.LineNumber)`t$($line.Pattern)`n"
+            if ($OutputPreference -eq 'IgnoreSecrets') {
+                $Result = [string]::Empty
+                foreach ($line in $res) {
+                    $Result += "$($line.Path);$($line.LineNumber);$($line.Line)`n"
+                }
+            }
+            else {
+                $Result += "Path`tLine`tLineNumber`tPattern`n"
+                foreach ($line in $res) {
+                    $Result += "$($line.Path)`t$($line.Line)`t$($line.LineNumber)`t$($line.Pattern)`n"
+                }
             }
         }
     }
@@ -96,6 +104,7 @@ function Find-Secret {
     }
         switch ($OutputPreference) {
             'Output'  { Write-Output $Result }
+            'IgnoreSecrets'  { Write-Output $Result }
             'Warning' { Write-Warning $Result }
             'Error'   { Write-Error $Result }
             'Object'  { $res }

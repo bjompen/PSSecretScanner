@@ -105,6 +105,16 @@ Find-Secret -Path c:\MyPowerShellFiles\ -Filetype '*'
 This command will scan the c:\MyPowerShellFiles\ directory recursively for secrets using the default config.json.
 It will try to scan all filetypes in this folder including non clear text. This might be very slow.
 
+### EXAMPLE 8
+
+```PowerShell
+Find-Secret -OutputPreference IgnoreSecrets | Out-File .\.ignoresecrets -Force
+```
+
+This command will scan the current directory, $PWD, and all subfolders for secrets using the default config.json.
+It will output the result in the correct format for an ExcludeList, and output the result to a the .\.ignoresecrets file.
+If this file exists _in a git root folder_ it will then be automatically read and used by Write-SecretStatus.
+
 ## PARAMETERS
 
 ### -ConfigPath
@@ -185,7 +195,7 @@ Set the stream to output data to, or output the Select-String object to create y
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: Output, Warning, Error, Object
+Accepted values: Output, Warning, Error, Object, IgnoreSecrets
 
 Required: False
 Position: Named
