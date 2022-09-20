@@ -27,15 +27,7 @@ Describe 'Find-Secret' {
             Mock -CommandName AssertParameter -ModuleName PSSecretScanner -MockWith {
                 return $true
             }
-            
-            # Mock to always return one file to scan
-            Mock -CommandName Get-ChildItem -ModuleName PSSecretScanner -MockWith {
-                @{
-                    FullName = $TestFile 
-                    Extension = '.ps1'
-                }
-            } -ParameterFilter {$Path -and $File -and $Recurse}
-            
+
             # Mock GetConfig - wrapper function to make Find-Secret testable
             Mock -CommandName GetConfig -ModuleName PSSecretScanner -MockWith {
                 return '{"regexes":[{"_Pattern1":"pat1"},{"_Pattern2":"pat2"}],"fileextensions":[".ps1",".ps2"]}' | ConvertFrom-Json -AsHashtable
@@ -46,11 +38,13 @@ Describe 'Find-Secret' {
             $Error.Clear()
             Find-Secret $ScanFolder -ErrorAction SilentlyContinue
             $Error.count | Should -Be 1
+            $error[0].exception.message | Should -BeLike "Found 1 strings.*"
         }
 
         It 'Redirecting output to Output stream' {
             $r = Find-Secret $ScanFolder -OutputPreference Output
             $r.count | Should -Be 1
+            $r | Should -BeLike 'Found 1 strings.*'
         }
 
         It 'Redirecting output to object' {
@@ -72,14 +66,6 @@ Describe 'Find-Secret' {
             Mock -CommandName AssertParameter -ModuleName PSSecretScanner -MockWith {
                 return $true
             }
-            
-            # Mock to always return one file to scan
-            Mock -CommandName Get-ChildItem -ModuleName PSSecretScanner -MockWith {
-                @{
-                    FullName = $TestFile 
-                    Extension = '.ps1'
-                }
-            } -ParameterFilter {$Path -and $File -and $Recurse}
             
             # Mock GetConfig - wrapper function to make Find-Secret testable
             Mock -CommandName GetConfig -ModuleName PSSecretScanner -MockWith {

@@ -69,7 +69,7 @@ function Find-Secret {
 
             Write-Verbose "Performing $RegexName scan`nPattern '$Pattern'`n"
 
-            Get-Item $ScanFiles.FullName | Select-String -Pattern $Pattern
+            $ScanFiles | Select-String -Pattern $Pattern
         }
         
         if (-not [string]::IsNullOrEmpty($Excludelist)) {

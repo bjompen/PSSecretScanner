@@ -55,6 +55,9 @@ Yes, even keeping it simple there are stuff I might want to add some day, or if 
 
 ## Changelog
 
+- 2022-09-20
+  - Increased speed by almost 50% by not fetching every file twice 🤦
+  - Fixed tests that was badly written and returned false positives.
 - 2022-08-08
   - Added `-OutputPreference IgnoreSecrets` To make it easer to manage ExcludeLists. See help documentation for example.
   - Added support for ignorelist in Write-SecretStatus.
