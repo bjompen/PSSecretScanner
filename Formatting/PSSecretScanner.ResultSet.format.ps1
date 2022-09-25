@@ -26,7 +26,7 @@ Write-FormatView -TypeName PSSecretScanner.ResultSet -Action {
         $env:BUILD_BUILDID -and $_.Results.Count -gt 0
     } -ScriptBlock {
         @(
-            "##vso[task.logissue type=error]$($_.Results.Count) secrets found $('!' * $_.Results.Count)"
+            "##vso[task.logissue type=error]$($_.Results.Count) found."
             foreach ($bad in $_.results) {
                 "##vso[task.logissue type=error;sourcepath=$($bad.Path);linenumber=$($bad.LineNumber)]$($bad.PatternName) found"
             }
@@ -37,10 +37,16 @@ Write-FormatView -TypeName PSSecretScanner.ResultSet -Action {
         $env:GITHUB_JOB -and $_.Results.Count -gt 0
     } -ScriptBlock {
         @(
-            "::error::$($_.Results.Count) secrets found $('!' * $_.Results.Count)"
+            "::error::$($_.Results.Count) secrets found $('!' * $_.Results.Count)."
             foreach ($bad in $_.results) {
                 "::error file=$($bad.Path),line=$($bad.LineNumber)::$($bad.PatternName) found"
             }
         ) -join [Environment]::NewLine
     }
+
+    Write-FormatViewExpression -If {
+        $_.Results.Count -gt 0 -and -not ($env:GITHUB_JOB -or $env:BUILD_BUILDID)
+    } -ScriptBlock {
+        "found $($_.Results.Count) secrets $('!' * $_.Results.Count)"
+    } -ForegroundColor Error
 }
