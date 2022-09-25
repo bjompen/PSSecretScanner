@@ -63,14 +63,26 @@ function Find-Secret {
     if ($ScanFiles.Count -ge 1) {
         Write-Verbose "Scanning files:`n$($ScanFiles.FullName -join ""`n"")"
 
-        $Res = $Config['regexes'].Keys | ForEach-Object {
-            $RegexName = $_
-            $Pattern = ($Config['regexes'])."$RegexName"
+        $scanStart = [DateTime]::Now
 
-            Write-Verbose "Performing $RegexName scan`nPattern '$Pattern'`n"
+        $Res = 
+            foreach ($key in $Config['regexes'].Keys) {         
+                $RegexName = $key
+                $Pattern = ($Config['regexes'])."$RegexName"
 
-            $ScanFiles | Select-String -Pattern $Pattern
-        }
+                Write-Verbose "Performing $RegexName scan`nPattern '$Pattern'`n"
+
+                $ScanFiles | 
+                    Select-String -Pattern $Pattern |
+                    Add-Member NoteProperty PatternName (
+                        $key -replace '_', ' ' -replace '^\s{0,}'
+                    ) -Force -PassThru |
+                    & { process {
+                        $_.pstypenames.clear()
+                        $_.pstypenames.add('PSSecretScanner.Result')
+                        $_
+                    } }
+            }
         
         if (-not [string]::IsNullOrEmpty($Excludelist)) {
             [string[]]$Exclusions = GetExclusions $Excludelist
@@ -80,9 +92,24 @@ function Find-Secret {
                 "$($_.Path);$($_.LineNumber);$($_.Line)" -notin $Exclusions
             }
         }
+
+        $scanEnd = [DateTime]::Now
+        $scanTook = $scanEnd - $scanStart
         
         $Result = "Found $($Res.Count) strings.`n"
 
+        $resultSet = 
+            [Ordered]@{
+                PSTypeName    = 'PSSecretScanner.ResultSet'
+                Results       = $res
+                ScanFiles     = $ScanFiles
+                ScanStart     = $scanStart
+                ScanTimespan  = $scanTook
+                ScanEnd       = $scanEnd
+            }
+
+        $result = [PSCustomObject]$resultSet
+        <#
         if ($res.Count -gt 0) {
             if ($OutputPreference -eq 'IgnoreSecrets') {
                 $Result = [string]::Empty
@@ -96,17 +123,17 @@ function Find-Secret {
                     $Result += "$($line.Path)`t$($line.Line)`t$($line.LineNumber)`t$($line.Pattern)`n"
                 }
             }
-        }
+        }#>
     }
     else {
         $Result = 'Found no files to scan'
         $res = @()
     }
         switch ($OutputPreference) {
-            'Output'  { Write-Output $Result }
+            'Output'  { $Result }
             'IgnoreSecrets'  { Write-Output $Result }
-            'Warning' { Write-Warning $Result }
-            'Error'   { Write-Error $Result }
+            'Warning' { Write-Warning ($Result | Out-String) }
+            'Error'   { Write-Error ($Result | Out-String) }
             'Object'  { $res }
         }
 }
