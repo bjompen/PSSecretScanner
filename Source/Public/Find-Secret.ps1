@@ -14,11 +14,7 @@ function Find-Secret {
         [Parameter(ParameterSetName = 'File', Position = 0)]
         [ValidateScript({ AssertParameter -ScriptBlock {Test-Path $_} -ErrorMessage "File not found." })]
         [string]$File,
-
-        [Parameter()]
-        [ValidateSet('Output','Warning','Error','Object','IgnoreSecrets')]
-        [string]$OutputPreference = 'Error',
-
+        
         [Parameter()]
         [string]$ConfigPath = $script:PSSSConfigPath,
 
@@ -60,29 +56,28 @@ function Find-Secret {
         }
     }
 
+    $scanStart = [DateTime]::Now
+
     if ($ScanFiles.Count -ge 1) {
         Write-Verbose "Scanning files:`n$($ScanFiles.FullName -join ""`n"")"
 
-        $scanStart = [DateTime]::Now
+        $Res = foreach ($key in $Config['regexes'].Keys) {         
+            $RegexName = $key
+            $Pattern = ($Config['regexes'])."$RegexName"
 
-        $Res = 
-            foreach ($key in $Config['regexes'].Keys) {         
-                $RegexName = $key
-                $Pattern = ($Config['regexes'])."$RegexName"
+            Write-Verbose "Performing $RegexName scan`nPattern '$Pattern'`n"
 
-                Write-Verbose "Performing $RegexName scan`nPattern '$Pattern'`n"
-
-                $ScanFiles | 
-                    Select-String -Pattern $Pattern |
-                    Add-Member NoteProperty PatternName (
-                        $key -replace '_', ' ' -replace '^\s{0,}'
-                    ) -Force -PassThru |
-                    & { process {
-                        $_.pstypenames.clear()
-                        $_.pstypenames.add('PSSecretScanner.Result')
-                        $_
-                    } }
-            }
+            $ScanFiles | 
+                Select-String -Pattern $Pattern |
+                Add-Member NoteProperty PatternName (
+                    $key -replace '_', ' ' -replace '^\s{0,}'
+                ) -Force -PassThru |
+                & { process {
+                    $_.pstypenames.clear()
+                    $_.pstypenames.add('PSSecretScanner.Result')
+                    $_
+                } }
+        }
         
         if (-not [string]::IsNullOrEmpty($Excludelist)) {
             [string[]]$Exclusions = GetExclusions $Excludelist
@@ -92,48 +87,32 @@ function Find-Secret {
                 "$($_.Path);$($_.LineNumber);$($_.Line)" -notin $Exclusions
             }
         }
-
-        $scanEnd = [DateTime]::Now
-        $scanTook = $scanEnd - $scanStart
         
         $Result = "Found $($Res.Count) strings.`n"
 
-        $resultSet = 
-            [Ordered]@{
-                PSTypeName    = 'PSSecretScanner.ResultSet'
-                Results       = $res
-                ScanFiles     = $ScanFiles
-                ScanStart     = $scanStart
-                ScanTimespan  = $scanTook
-                ScanEnd       = $scanEnd
-            }
-
-        $result = [PSCustomObject]$resultSet
-        <#
-        if ($res.Count -gt 0) {
-            if ($OutputPreference -eq 'IgnoreSecrets') {
-                $Result = [string]::Empty
-                foreach ($line in $res) {
-                    $Result += "$($line.Path);$($line.LineNumber);$($line.Line)`n"
-                }
-            }
-            else {
-                $Result += "Path`tLine`tLineNumber`tPattern`n"
-                foreach ($line in $res) {
-                    $Result += "$($line.Path)`t$($line.Line)`t$($line.LineNumber)`t$($line.Pattern)`n"
-                }
-            }
-        }#>
+        $resultSet = [Ordered]@{
+            Results       = $res
+            ScanFiles     = $ScanFiles
+            ScanStart     = $scanStart
+        }
     }
     else {
-        $Result = 'Found no files to scan'
-        $res = @()
-    }
-        switch ($OutputPreference) {
-            'Output'  { $Result }
-            'IgnoreSecrets'  { Write-Output $Result }
-            'Warning' { Write-Warning ($Result | Out-String) }
-            'Error'   { Write-Error ($Result | Out-String) }
-            'Object'  { $res }
+        $resultSet = [Ordered]@{
+            Results       = @()
+            ScanFiles     = @()
+            ScanStart     = $scanStart
         }
+    }
+    
+    
+    $scanEnd = [DateTime]::Now
+    $scanTook = $scanEnd - $scanStart
+
+    $resultSet.Add('PSTypeName','PSSecretScanner.ResultSet')
+    $resultSet.Add('ScanEnd', $scanEnd)
+    $resultSet.Add('ScanTimespan', $scanTook)
+    
+    $result = [PSCustomObject]$resultSet
+    
+    $Result
 }

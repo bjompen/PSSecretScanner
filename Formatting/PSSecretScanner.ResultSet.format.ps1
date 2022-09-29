@@ -12,7 +12,7 @@ Write-FormatView -TypeName PSSecretScanner.ResultSet -Action {
     }
 
     Write-FormatViewExpression -ScriptBlock {
-        "[ $($_.ScanStart.ToShortTimeString()) - $($_.ScanEnd.ToShortTimeString())] $([Math]::Round($_.ScanTimespan.TotalSeconds,2))s"
+        "[ $($_.ScanStart.ToLongTimeString()) - $($_.ScanEnd.ToLongTimeString())] $([Math]::Round($_.ScanTimespan.TotalSeconds,2))s"
     }    
     Write-FormatViewExpression -Newline
 
