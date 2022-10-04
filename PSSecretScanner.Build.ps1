@@ -1,4 +1,4 @@
-#Requires -Modules 'InvokeBuild', 'PlatyPS', 'Pester'
+#Requires -Modules 'InvokeBuild', 'PlatyPS', 'Pester', 'EZOut'
 
 [string]$ModuleName = 'PSSecretScanner'
 [string]$ModuleSourcePath = "$PSScriptRoot\Source"
