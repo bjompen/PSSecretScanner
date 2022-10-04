@@ -3,6 +3,7 @@
 [string]$ModuleName = 'PSSecretScanner'
 [string]$ModuleSourcePath = "$PSScriptRoot\Source"
 [string]$HelpSourcePath = "$PSScriptRoot\Docs\Help"
+[string]$EzoutSourcePath = "$PSScriptRoot"
 
 [string]$Version = '1.0.9'
 
@@ -30,6 +31,10 @@ task RunScriptAnalyzer {
 
 Task Build_Documentation {
     New-ExternalHelp -Path $HelpSourcePath -OutputPath "$OutputPath\en-US"
+}
+
+Task Build_TypesAndFormat {
+    & "$EzoutSourcePath\PSSecretScanner.ezout.ps1"
 }
 
 task Compile_Module {
@@ -67,6 +72,9 @@ task Compile_Module {
     # Manifest
     $ManifestContent = (Get-Content "$ModuleSourcePath\$ModuleName.psd1" ) -replace 'ModuleVersion\s*=\s*[''"][0-9\.]{1,10}[''"]',"Moduleversion = '$Version'" -replace 'FunctionsToExport\s*=\s*[''"]\*[''"]',"FunctionsToExport = @('$($ExportedFunctionList -join "','")')"
     $ManifestContent | Out-File $PSD1Path 
+
+    # Formating and types
+    Copy-Item "$ModuleSourcePath\*.ps1xml" -Destination $OutputPath
 }
 
 task Include_Resources {
@@ -88,6 +96,7 @@ task . Clean,
     Unit_Tests,
     RunScriptAnalyzer,
     Build_Documentation,
+    Build_TypesAndFormat,
     Compile_Module,
     Include_Resources
     
