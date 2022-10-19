@@ -87,8 +87,6 @@ function Find-Secret {
                 "$($_.Path);$($_.LineNumber);$($_.Line)" -notin $Exclusions
             }
         }
-        
-        $Result = "Found $($Res.Count) strings.`n"
 
         $resultSet = [Ordered]@{
             Results       = $res

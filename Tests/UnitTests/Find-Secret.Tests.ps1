@@ -5,7 +5,7 @@ Import-Module $PSScriptRoot\..\..\Source\PSSecretScanner -Force
 
 Describe 'Find-Secret' {
     Context 'Basic design tests' {
-        It 'Should have non mandatory parameter <_>' -TestCases 'Path', 'OutputPreference', 'ConfigPath', 'Excludelist', 'Filetype', 'File', 'Recursive' {
+        It 'Should have non mandatory parameter <_>' -TestCases 'Path', 'ConfigPath', 'Excludelist', 'Filetype', 'File', 'Recursive' {
             Get-Command Find-Secret | Should -HaveParameter $_ -Because 'If parameters change behaviour we need to do a major bump'
         }
 
@@ -15,10 +15,9 @@ Describe 'Find-Secret' {
         }
     }
 
-    Context 'Functionality - streams' {
+    Context 'Version 2.0 - Output object' {
         BeforeAll {
             $TestFile = 'TestDrive:\TestFile.ps1'
-            $ScanFolder = Split-Path $TestFile
     
             # Create a test file
             'pat1' | Out-File -FilePath $TestFile -Force
@@ -27,31 +26,57 @@ Describe 'Find-Secret' {
             Mock -CommandName AssertParameter -ModuleName PSSecretScanner -MockWith {
                 return $true
             }
-
+            
+            # Mock to always return one file to scan
+            Mock -CommandName Get-ChildItem -ModuleName PSSecretScanner -MockWith {
+                @{
+                    FullName = $TestFile 
+                    Extension = '.ps1'
+                }
+            } -ParameterFilter {$Path -and $File -and $Recurse}
+            
             # Mock GetConfig - wrapper function to make Find-Secret testable
             Mock -CommandName GetConfig -ModuleName PSSecretScanner -MockWith {
                 return '{"regexes":[{"_Pattern1":"pat1"},{"_Pattern2":"pat2"}],"fileextensions":[".ps1",".ps2"]}' | ConvertFrom-Json -AsHashtable
             }
         }
-    
-        It 'Given no outputpreference, should return one match to the error stream' {
-            $Error.Clear()
-            Find-Secret $ScanFolder -ErrorAction SilentlyContinue
-            $Error.count | Should -Be 1
-            $error[0].exception.message | Should -BeLike "Found 1 secrets!*"
+
+        It 'Output object should be of type "PSCustomObject"' {
+            $r = Find-Secret $TestFile
+            $r | Should -BeOfType PSCustomObject
         }
 
-        It 'Redirecting output to Output stream' {
-            $r = Find-Secret $ScanFolder -OutputPreference Output
-            $r.count | Should -Be 1
-            $r | Out-String | Should -BeLike '*Found 1 secrets!*'
+        It 'Output object typenames should be "PSSecretScanner.ResultSet"' {
+            $r = Find-Secret $TestFile
+            'PSSecretScanner.ResultSet' | Should -BeIn $r.pstypenames 
         }
 
-        It 'Redirecting output to object' {
-            $r = Find-Secret $ScanFolder -OutputPreference Object
-            $r.count | Should -Be 1
+        It 'Each result should be of type "MatchInfo"' {
+            $r = Find-Secret $TestFile
+            $r.Results[0] | Should -BeOfType Microsoft.PowerShell.Commands.MatchInfo
         }
-    
+
+        It 'Each result object typename should be "PSSecretScanner.Result"' {
+            $r = Find-Secret $TestFile
+            'PSSecretScanner.Result' | Should -BeIn $r.Results[0].pstypenames
+        }
+
+        It 'Result should always contain property <_> - no scanresults' -TestCases 'Results', 'ScanEnd', 'ScanFiles', 'ScanStart', 'ScanTimespan', 'Count', 'FailedFailCount', 'FileCount' {
+            $r = Find-Secret
+            $r.Results.Count | Should -be 0
+            $_ | Should -BeIn ($r | Get-Member).Name 
+        }
+
+        It 'Result should always contain property <_> - one scanresult' -TestCases 'Results', 'ScanEnd', 'ScanFiles', 'ScanStart', 'ScanTimespan', 'Count', 'FailedFailCount', 'FileCount' {
+            $r = Find-Secret $TestFile
+            $r.Results.Count | Should -be 1
+            $_ | Should -BeIn ($r | Get-Member).Name 
+        }
+
+        It 'FileCount should be the amount of files where secrets are found' {
+            $r = Find-Secret $TestFile
+            $r.FileCount | Should -be 1
+        }
     }
 
     Context 'Functionality - Exclusion list' {
@@ -77,8 +102,8 @@ Describe 'Find-Secret' {
             Mock -CommandName GetExclusions -ModuleName PSSecretScanner -MockWith {
                 return "$((resolve-path TestDrive:\TestFile.ps1).ProviderPath);1;pat1"
             }
-            $r = Find-Secret $ScanFolder -OutputPreference Object -Excludelist 'TestDrive:\TestFile.ps1'
-            $r.count | Should -Be 0
+            $r = Find-Secret $ScanFolder -Excludelist 'TestDrive:\TestFile.ps1'
+            $r.results.count | Should -Be 0
         }
 
         It 'If an exclusion list is given it should excluse matches - one result' {
@@ -86,8 +111,8 @@ Describe 'Find-Secret' {
             Mock -CommandName GetExclusions -ModuleName PSSecretScanner -MockWith {
                 return "$((resolve-path TestDrive:\TestFile.ps1).ProviderPath);1;pat1"
             }
-            $r = Find-Secret $ScanFolder -OutputPreference Object -Excludelist 'TestDrive:\TestFile.ps1'
-            $r.count | Should -Be 1
+            $r = Find-Secret $ScanFolder -Excludelist 'TestDrive:\TestFile.ps1'
+            $r.results.count | Should -Be 1
         }
     }
 
@@ -116,9 +141,10 @@ Describe 'Find-Secret' {
                 return '{"regexes":[{"_Pattern1":"pat1"},{"_Pattern2":"pat2"}],"fileextensions":[".ps1",".ps2"]}' | ConvertFrom-Json -AsHashtable
             }
         }
+
         It 'If given one single file it should scan that file' {
-            $r = Find-Secret -File $TestFile -OutputPreference Object
-            $r.count | Should -Be 1
+            $r = Find-Secret -File $TestFile
+            $r.ScanFiles.count | Should -Be 1
         }
     }
 
@@ -155,13 +181,13 @@ Describe 'Find-Secret' {
         }
 
         It 'Given a folder it should scan that folder - Using positional paramneter' {
-            $r = Find-Secret $ScanFolder -OutputPreference Object
-            $r.count | Should -Be 1
+            $r = Find-Secret $ScanFolder
+            $r.ScanFiles.count | Should -Be 1
         }
 
         It 'Given a folder it should scan that folder - Not using positional paramneter' {
-            $r = Find-Secret -Path $ScanFolder -OutputPreference Object
-            $r.count | Should -Be 1
+            $r = Find-Secret -Path $ScanFolder
+            $r.ScanFiles.count | Should -Be 1
         }
 
         It 'Given a folder and a file it should scan both' {
@@ -170,13 +196,13 @@ Describe 'Find-Secret' {
             'pat1' | Out-File -FilePath TestDrive:\Folder1\file1.ps1 -Force
             'pat1' | Out-File -FilePath TestDrive:\Folder2\file2.ps1 -Force
 
-            $r = Find-Secret 'TestDrive:\Folder1','TestDrive:\Folder2\file2.ps1' -OutputPreference Object
-            $r.count | Should -Be 2
+            $r = Find-Secret 'TestDrive:\Folder1','TestDrive:\Folder2\file2.ps1'
+            $r.ScanFiles.count | Should -Be 2
         }
 
         It 'Given only a file it should work as expected' {
-            $r = Find-Secret 'TestDrive:\TestFile.ps1' -OutputPreference Object
-            $r.count | Should -Be 1
+            $r = Find-Secret 'TestDrive:\TestFile.ps1'
+            $r.ScanFiles.count | Should -Be 1
         }
 
         It 'If recursive is _not_ set we should only scan root dir' {
@@ -186,8 +212,8 @@ Describe 'Find-Secret' {
             'pat1' | Out-File -FilePath TestDrive:\Folder1\file1.ps1 -Force
             'pat1' | Out-File -FilePath TestDrive:\Folder2\file2.ps1 -Force
 
-            $r = Find-Secret $ScanFolder -Recursive:$false -OutputPreference Object
-            $r.count | Should -Be 1
+            $r = Find-Secret $ScanFolder -Recursive:$false
+            $r.ScanFiles.count | Should -Be 1
         }
     }
 }
