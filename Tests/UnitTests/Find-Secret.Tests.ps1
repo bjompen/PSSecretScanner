@@ -38,13 +38,13 @@ Describe 'Find-Secret' {
             $Error.Clear()
             Find-Secret $ScanFolder -ErrorAction SilentlyContinue
             $Error.count | Should -Be 1
-            $error[0].exception.message | Should -BeLike "Found 1 strings.*"
+            $error[0].exception.message | Should -BeLike "Found 1 secrets!*"
         }
 
         It 'Redirecting output to Output stream' {
             $r = Find-Secret $ScanFolder -OutputPreference Output
             $r.count | Should -Be 1
-            $r | Should -BeLike 'Found 1 strings.*'
+            $r | Out-String | Should -BeLike '*Found 1 secrets!*'
         }
 
         It 'Redirecting output to object' {

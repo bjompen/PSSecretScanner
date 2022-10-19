@@ -1,0 +1,1 @@
+$this.ScanFiles.Count
