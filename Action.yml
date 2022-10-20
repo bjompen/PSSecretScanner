@@ -1,12 +1,9 @@
 name: PSSecretScanner
 description: Scan for secrets in your source files.
-branding: 
-  icon: terminal
-  color: blue
 outputs: 
-  
     ScanResults: ${{ steps.Scan.outputs.Scanresults }}
-steps: 
+runs:
+  using: "composite"
   steps: 
     - name: Scan for secrets
       id: Scan
