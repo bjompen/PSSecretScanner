@@ -1,0 +1,39 @@
+name: PSSecretScanner
+description: Scan for secrets in your source files.
+outputs: 
+    ScanResults: ${{ steps.Scan.outputs.Scanresults }}
+runs:
+  using: "composite"
+  steps: 
+    - name: Scan for secrets
+      id: Scan
+      shell: pwsh
+      run: |
+        $FindSplat = @{
+            Recursive = $true
+        }
+        
+        $ExcludePath = Join-Path -Path  (git rev-parse --show-toplevel) -ChildPath '.ignoresecrets'
+        if (Test-Path $ExcludePath) {
+            $FindSplat.Add('Excludelist',$ExcludePath)
+        }
+        
+        $Secrets = Find-Secret @FindSplat -Verbose
+        
+        Write-Output "::group::Scanned files"
+        Write-Output "Scanned $($Secrets.ScanFiles.Count) files"
+        Write-Output $Secrets.ScanFiles.FullName
+        Write-Output "::endgroup::"
+        
+        Write-Output "::group::Scanned files"
+        Write-Output $Secrets.ScanFiles.FullName
+        Write-Output "::endgroup::"
+        
+        if ($Secrets.Count -ne 0) {
+            foreach ($r in $Secrets.Results) {
+                Write-Output "::error file=$($r.Path),line=$($r.LineNumber),title=$($r.PatternName)::$($r.Line)"
+            }
+        }
+        Write-Output "Scanresults=$($Secrets.Results)" >> $GITHUB_OUTPUT
+        
+
