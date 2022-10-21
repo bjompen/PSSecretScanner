@@ -1,7 +1,9 @@
 name: PSSecretScanner
 description: Scan for secrets in your source files.
 outputs: 
-    ScanResults: ${{ steps.Scan.outputs.Scanresults }}
+    ScanResults:
+        description: "PSSecretScanner scan results"
+        value: ${{ steps.Scan.outputs.Scanresults }}
 runs:
   using: "composite"
   steps: 
