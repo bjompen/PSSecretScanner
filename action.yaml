@@ -11,6 +11,30 @@ runs:
       id: Scan
       shell: pwsh
       run: |
+        $PSD1Found = Get-ChildItem -Recurse -Filter "*.psd1" | Where-Object Name -eq 'PSSecretScanner.psd1' | Select-Object -First 1
+
+        if ($PSD1Found) {
+            $PSSecretScannerModulePath = $PSD1Found
+            Import-Module $PSD1Found -Force -PassThru | Out-Host
+        } 
+        elseif ($env:GITHUB_ACTION_PATH) {
+            $PSSecretScannerModulePath = Join-Path $env:GITHUB_ACTION_PATH 'Source/PSSecretScanner.psd1'
+            if (Test-path $PSSecretScannerModulePath) {
+                Import-Module $PSSecretScannerModulePath -Force -PassThru | Out-Host
+            } 
+            else {
+                throw "PSSecretScanner not found"
+            }
+        }
+        else {
+            try {
+                Import-Module PSSecretScanner
+            }
+            catch {
+                throw 'Cant find PSSecretScanner module.'
+            }
+        }
+
         $FindSplat = @{
             Recursive = $true
         }
