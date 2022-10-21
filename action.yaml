@@ -1,9 +1,6 @@
 name: PSSecretScanner
 description: Scan for secrets in your source files.
-outputs: 
-    ScanResults:
-        description: "PSSecretScanner scan results"
-        value: ${{ steps.Scan.outputs.Scanresults }}
+
 runs:
   using: "composite"
   steps: 
@@ -39,24 +36,26 @@ runs:
             Recursive = $true
         }
         
-        $ExcludePath = Join-Path -Path  (git rev-parse --show-toplevel) -ChildPath '.ignoresecrets'
+        $ExcludePath = Join-Path -Path (git rev-parse --show-toplevel) -ChildPath '.ignoresecrets'
         if (Test-Path $ExcludePath) {
             $FindSplat.Add('Excludelist',$ExcludePath)
         }
         
-        $Secrets = Find-Secret @FindSplat -Verbose
+        $Secrets = Find-Secret @FindSplat
         
         Write-Output "::group::Scanned files"
         Write-Output "Scanned $($Secrets.ScanFiles.Count) files"
         Write-Output $Secrets.ScanFiles.FullName
         Write-Output "::endgroup::"
         
-        # if ($Secrets.Count -ne 0) {
-        #     foreach ($r in $Secrets.Results) {
-        #         Write-Output "::error file=$($r.Path),line=$($r.LineNumber),title=$($r.PatternName)::$($r.Line)"
-        #     }
-        # }
-        
-        Write-Output "::group::Scan results"
-        Write-Output "Scanresults=$($Secrets.Results)" >> $GITHUB_OUTPUT
-        Write-Output "::endgroup::"
+        if ($Secrets.Count -ne 0) {
+            foreach ($r in $Secrets.Results) {
+                Write-Output "::error title=$($r.PatternName), file=$($r.Path), line=$($r.LineNumber)::$($r.Line)"
+            }
+            Write-Error "Found secrets!"
+        }
+        else {
+            Write-Output "::group::Scan results"
+            Write-Output "::notice::No secrets found. #ShareCodeNotSecrets"
+            Write-Output "::endgroup::"            
+        }
