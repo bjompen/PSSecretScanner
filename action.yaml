@@ -35,5 +35,3 @@ runs:
             }
         }
         Write-Output "Scanresults=$($Secrets.Results)" >> $GITHUB_OUTPUT
-        
-
