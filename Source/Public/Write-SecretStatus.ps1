@@ -8,7 +8,7 @@ function Write-SecretStatus {
         }
         else {
             $FindSplat = @{
-                Recursive = $false
+                NoRecurse = $true
             }
 
             $ExcludePath = Join-Path -Path  (git rev-parse --show-toplevel) -ChildPath '.ignoresecrets'

@@ -32,9 +32,7 @@ runs:
             }
         }
 
-        $FindSplat = @{
-            Recursive = $true
-        }
+        $FindSplat = @{}
         
         $ExcludePath = Join-Path -Path (git rev-parse --show-toplevel) -ChildPath '.ignoresecrets'
         if (Test-Path $ExcludePath) {
