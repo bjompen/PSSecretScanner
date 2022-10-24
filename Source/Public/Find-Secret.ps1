@@ -56,6 +56,25 @@ function Find-Secret {
         }
     }
 
+    if (-not [string]::IsNullOrEmpty($Excludelist)) {
+        # Remove the excludelist from scanfiles. Otherwise patternmatches will be found here...
+        $ScanFiles = $ScanFiles.Where({
+            $_.FullName -ne (Resolve-Path $Excludelist).Path 
+        })
+
+        $Exclusions = GetExclusions $Excludelist
+        $FileExclusions = $Exclusions.Where({$_.Type -eq 'File'}).StringValue
+        $LinePatternExclusions = $Exclusions.Where({$_.Type -eq 'LinePattern'}).StringValue
+        Write-Verbose "Using excludelist $Excludelist. Found $($Exclusions.Count) exlude strings."
+
+        if ($FileExclusions.count -ge 1) {
+            Write-Verbose "Excluding files from scan:`n$($FileExclusions -join ""`n"")"
+            $ScanFiles = $ScanFiles.Where({
+                $_.FullName -notin $FileExclusions
+            })
+        }
+    }
+
     $scanStart = [DateTime]::Now
 
     if ($ScanFiles.Count -ge 1) {
@@ -80,11 +99,10 @@ function Find-Secret {
         }
         
         if (-not [string]::IsNullOrEmpty($Excludelist)) {
-            [string[]]$Exclusions = GetExclusions $Excludelist
-            Write-Verbose "Using excludelist $Excludelist. Found $($Exclusions.Count) exlude strings."
-
-            $Res = $Res | Where-Object {
-                "$($_.Path);$($_.LineNumber);$($_.Line)" -notin $Exclusions
+            if ($LinePatternExclusions.count -ge 1) {
+                $Res = $Res | Where-Object {
+                    "$($_.Path);$($_.LineNumber);$($_.Line)" -notin $LinePatternExclusions
+                }
             }
         }
 
