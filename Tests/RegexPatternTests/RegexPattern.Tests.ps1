@@ -20,14 +20,14 @@ Describe 'Pattern verification tests' {
     Context 'Should find patterns' -Tag 'match' {
         It 'Should find pattern <_.Pattern>' -TestCases $ShouldFindPatterns {
             $_.Pattern | Out-File TestDrive:\MatchFile.txt
-            $r = Find-Secret -Path TestDrive:\MatchFile.txt -OutputPreference Object
+            $r = Find-Secret -Path TestDrive:\MatchFile.txt
             $r.count | Should -BeGreaterOrEqual 1
         }
     }
     Context 'Should not find patterns' -Tag 'notmatch' {
         It 'Should not find pattern <_.Pattern>' -TestCases $ShouldNotFindPatterns {
             $_.Pattern | Out-File TestDrive:\MatchFile.txt
-            $r = Find-Secret -Path TestDrive:\MatchFile.txt -OutputPreference Object
+            $r = Find-Secret -Path TestDrive:\MatchFile.txt
             $r.count | Should -Be 0
         }
     }

@@ -5,7 +5,7 @@
 [string]$HelpSourcePath = "$PSScriptRoot\Docs\Help"
 [string]$EzoutSourcePath = "$PSScriptRoot"
 
-[string]$Version = '1.0.9'
+[string]$Version = '2.0.0'
 
 [string]$OutputPath = "$PSScriptRoot\Bin\$ModuleName\$Version"
 
