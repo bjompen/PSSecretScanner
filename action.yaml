@@ -1,6 +1,10 @@
 name: PSSecretScanner
 description: Scan for secrets in your source files.
 
+branding: 
+  icon: lock
+  color: red
+
 runs:
   using: "composite"
   steps: 
