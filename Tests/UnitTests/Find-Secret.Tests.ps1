@@ -5,7 +5,7 @@ Import-Module $PSScriptRoot\..\..\Source\PSSecretScanner -Force
 
 Describe 'Find-Secret' {
     Context 'Basic design tests' {
-        It 'Should have non mandatory parameter <_>' -TestCases 'Path', 'ConfigPath', 'Excludelist', 'Filetype', 'File', 'Recursive' {
+        It 'Should have non mandatory parameter <_>' -TestCases 'Path', 'ConfigPath', 'Excludelist', 'Filetype', 'File', 'NoRecurse' {
             Get-Command Find-Secret | Should -HaveParameter $_ -Because 'If parameters change behaviour we need to do a major bump'
         }
 
@@ -100,7 +100,8 @@ Describe 'Find-Secret' {
 
         It 'If an exclusion list is given it should excluse matches - zero results' {
             Mock -CommandName GetExclusions -ModuleName PSSecretScanner -MockWith {
-                return "$((resolve-path TestDrive:\TestFile.ps1).ProviderPath);1;pat1"
+                $p = $((resolve-path TestDrive:\TestFile.ps1).ProviderPath).Replace('\','\\')
+                "[{""Type"": ""LinePattern"",""StringValue"": ""$p;1;pat1""}]" | ConvertFrom-Json
             }
             $r = Find-Secret $ScanFolder -Excludelist 'TestDrive:\TestFile.ps1'
             $r.results.count | Should -Be 0
@@ -109,7 +110,8 @@ Describe 'Find-Secret' {
         It 'If an exclusion list is given it should excluse matches - one result' {
             "pat1`npat2" | Out-File -FilePath $TestFile -Force
             Mock -CommandName GetExclusions -ModuleName PSSecretScanner -MockWith {
-                return "$((resolve-path TestDrive:\TestFile.ps1).ProviderPath);1;pat1"
+                $p = $((resolve-path TestDrive:\TestFile.ps1).ProviderPath).Replace('\','\\')
+                "[{""Type"": ""LinePattern"",""StringValue"": ""$p;1;pat1""}]" | ConvertFrom-Json
             }
             $r = Find-Secret $ScanFolder -Excludelist 'TestDrive:\TestFile.ps1'
             $r.results.count | Should -Be 1
@@ -205,14 +207,14 @@ Describe 'Find-Secret' {
             $r.ScanFiles.count | Should -Be 1
         }
 
-        It 'If recursive is _not_ set we should only scan root dir' {
+        It 'If NoRecurse is set we should only scan root dir' {
             # Make sure we have a subfolder tree with at least three matching files.
             New-Item 'TestDrive:\Folder1\' -ItemType Directory
             New-Item 'TestDrive:\Folder2\' -ItemType Directory
             'pat1' | Out-File -FilePath TestDrive:\Folder1\file1.ps1 -Force
             'pat1' | Out-File -FilePath TestDrive:\Folder2\file2.ps1 -Force
 
-            $r = Find-Secret $ScanFolder -Recursive:$false
+            $r = Find-Secret $ScanFolder -NoRecurse
             $r.ScanFiles.count | Should -Be 1
         }
     }
