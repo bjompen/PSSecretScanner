@@ -19,7 +19,7 @@ function GetExclusions {
             # Path or fileexclusion
             if ($eObj.Path -match '.*\\\*$') {
                 # Full path excluded
-                Get-ChildItem -Path $eObj.Path -Recurse -File | ForEach-Object { 
+                Get-ChildItem -Path $eObj.Path -Recurse -File -ErrorAction SilentlyContinue | ForEach-Object { 
                     $ExcludeResults.Add(@{
                         StringValue = $_.FullName
                         Type = 'File'
