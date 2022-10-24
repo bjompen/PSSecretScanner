@@ -1,6 +1,6 @@
 # Changelog
 
-- 2022-10-24 - 2.0.0-Beta
+- 2022-10-24 - 2.0.0
   - Added Types and output formating (thank you [@StartAutomating](https://github.com/StartAutomating))
   - Improved exclude list to support wildcards, relative paths, and more
   - changed parameter -Recurse (bool) to -NoRecurse (switch) to be more like PowerShell standard
