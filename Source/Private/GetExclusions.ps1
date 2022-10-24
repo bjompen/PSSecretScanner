@@ -9,6 +9,9 @@ function GetExclusions {
     foreach ($e in $Exclusions) {
         $eObj = ConvertFrom-Csv -InputObject $e -Delimiter ';' -Header 'Path', 'LineNumber', 'Line'
 
+        # Normalize path
+        $eObj.Path = $eObj.Path -replace '[\\\/]', [IO.Path]::DirectorySeparatorChar
+        
         if ($eObj.Path -match '^\..*') {
             # Path starts with '.', is relative. Replace with root folder
             $BasePath = split-path (Resolve-Path $Excludelist).Path 
