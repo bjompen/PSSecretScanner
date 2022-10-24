@@ -14,17 +14,14 @@ Scans for secrets in one or more folders or files.
 ## SYNTAX
 
 ### Path (Default)
-
 ```
-Find-Secret [[-Path] <String[]>] [-Filetype <String[]>] [-Recursive <Boolean>] [-OutputPreference <String>]
- [-ConfigPath <String>] [-Excludelist <String>] [<CommonParameters>]
+Find-Secret [[-Path] <String[]>] [-Filetype <String[]>] [-NoRecurse] [-ConfigPath <String>]
+ [-Excludelist <String>] [<CommonParameters>]
 ```
 
 ### File
-
 ```
-Find-Secret [[-File] <String>] [-OutputPreference <String>] [-ConfigPath <String>] [-Excludelist <String>]
- [<CommonParameters>]
+Find-Secret [[-File] <String>] [-ConfigPath <String>] [-Excludelist <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,12 +32,29 @@ It requires the config.json file containing regexes and file extensions to scan.
 You can select which output stream to use to make it behave the way you want to in a pipeline,
 Or output the result to pipeline as an object to wrap it in your own script.
 
-Excludelist can be used to ignore false positives
-Exclusions must then be in the format
-\<Full\path\to\file.txt\>;\<linenumber\>;\<Line\>
+Excludelist can be used to ignore false positives.
+
+Exclusions can be in the format
+> \<Full\path\to\file.txt\>;\<linenumber\>;\<Line\>
+
 Ex.
-    "C:\MyFiles\template.json;51;-----BEGIN RSA PRIVATE KEY-----"
-    "C:\MyRepo\MyModule.psm1:18:password = supersecret!!"
+
+>    "C:\MyFiles\template.json;51;-----BEGIN RSA PRIVATE KEY-----"
+>    "C:\MyRepo\MyModule.psm1:18:password = supersecret!!"
+
+or excluding entire files
+Ex.
+
+>    "C:\MyFiles\template.json"
+
+or excluding entire folders and all subfolders / files
+Ex.
+
+>    "C:\MyFiles\\*"
+
+Relativ paths are also supported (relative to the ignorefile)
+
+>    ".\MySubFolder\\*"
 
 ## EXAMPLES
 
@@ -63,7 +77,7 @@ This command will scan the c:\MyPowerShellFiles\ directory recursively and the C
 ### EXAMPLE 3
 
 ```PowerShell
-Find-Secret -Path c:\MyPowerShellFiles\ -Recurse:$False
+Find-Secret -Path c:\MyPowerShellFiles\ -NoRecurse
 ```
 
 This command will scan only the c:\MyPowerShellFiles\ directory for secrets using the default config.json.
@@ -72,31 +86,13 @@ Any subfolders will be excluded from scan.
 ### EXAMPLE 4
 
 ```PowerShell
-Find-Secret -Path c:\MyPowerShellFiles\ -OutputPrefence Output
-```
-
-This command will scan the c:\MyPowerShellFiles\ directory for secrets using the default config.json.
-Output will be made to the default Output stream instead of Error.
-
-### EXAMPLE 5
-
-```PowerShell
-Find-Secret -Path c:\MyPowerShellFiles\ -OutputPrefence Object
-```
-
-This command will scan the c:\MyPowerShellFiles\ directory recursively for secrets using the default config.json.
-Instead of outputting a string of the result to any stream, It will output a Select-String object that you can use in your own pipelines.
-
-### EXAMPLE 6
-
-```PowerShell
 Find-Secret -Path c:\MyPowerShellFiles\ -Filetype 'bicep','.json'
 ```
 
 This command will scan the c:\MyPowerShellFiles\ directory recursively for secrets using the default config.json.
 It will only scan files with the '.bicep' or '.json' extensions
 
-### EXAMPLE 7
+### EXAMPLE 5
 
 ```PowerShell
 Find-Secret -Path c:\MyPowerShellFiles\ -Filetype '*'
@@ -104,16 +100,6 @@ Find-Secret -Path c:\MyPowerShellFiles\ -Filetype '*'
 
 This command will scan the c:\MyPowerShellFiles\ directory recursively for secrets using the default config.json.
 It will try to scan all filetypes in this folder including non clear text. This might be very slow.
-
-### EXAMPLE 8
-
-```PowerShell
-Find-Secret -OutputPreference IgnoreSecrets | Out-File .\.ignoresecrets -Force
-```
-
-This command will scan the current directory, $PWD, and all subfolders for secrets using the default config.json.
-It will output the result in the correct format for an ExcludeList, and output the result to a the .\.ignoresecrets file.
-If this file exists _in a git root folder_ it will then be automatically read and used by Write-SecretStatus.
 
 ## PARAMETERS
 
@@ -187,19 +173,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -OutputPreference
+### -NoRecurse
 
-Set the stream to output data to, or output the Select-String object to create your own handling.
+Prevent recursive scan. If this switch is set we will _only_ scan the given folder, no subfolders.
 
 ```yaml
-Type: String
-Parameter Sets: (All)
+Type: SwitchParameter
+Parameter Sets: Path
 Aliases:
-Accepted values: Output, Warning, Error, Object, IgnoreSecrets
 
 Required: False
 Position: Named
-Default value: Error
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -221,25 +206,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Recursive
-
-This parameter can be set to $false to prevent recursive folder scans
-*NOTE: Since this is a bool, set it by using `-Recursive:$false`
-
-```yaml
-Type: Boolean
-Parameter Sets: Path
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
-
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -249,3 +216,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[PSSecretScanner on GitHub](https://github.com/bjompen/PSSecretScanner)
