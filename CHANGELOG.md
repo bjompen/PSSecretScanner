@@ -1,0 +1,49 @@
+# Changelog
+
+- 2022-10-24 - 2.0.0-Beta
+  - Added Types and output formating (thank you [@StartAutomating](https://github.com/StartAutomating))
+  - Improved exclude list to support wildcards, relative paths, and more
+  - changed parameter -Recurse (bool) to -NoRecurse (switch) to be more like PowerShell standard
+  - Added GitHub Action (thank you [@StartAutomating](https://github.com/StartAutomating) for inspiration)
+  - Minor speed and test improvements
+  - Break out changelog to separate file
+- 2022-09-20
+  - Increased speed by almost 50% by not fetching every file twice 🤦
+  - Fixed tests that was badly written and returned false positives.
+- 2022-08-08
+  - Added `-OutputPreference IgnoreSecrets` To make it easer to manage ExcludeLists. See help documentation for example.
+  - Added support for ignorelist in Write-SecretStatus.
+  - Added colours to Write-SecretStatus.
+- 1.0.8, 2022-07-29
+  - Change from Get-ChildItem to Get-Item which is marginaly faster. (2 seconds/10000 objects)
+  - Add boolean-Recurse parameter defaulted to $true to support non recursive scans ([#18](https://github.com/bjompen/PSSecretScanner/issues/18))
+  - Added Write-SecretStatus to add to posh-git profile ([#8](https://github.com/bjompen/PSSecretScanner/issues/8).
+- 2022-07-28
+  - Added `-File` parameter ([#12](https://github.com/bjompen/PSSecretScanner/issues/12))
+  - Changed the **firebaseio** pattern to make scanning faster.
+- 2022-07-28
+  - Added tests for Find-Secret ([#11](https://github.com/bjompen/PSSecretScanner/issues/11))
+  - Corrected logo (Really, how the hell does one write the wrong name! 🤦)
+  - Moved GetExclusions to private function to make it easier to mock ([#11](https://github.com/bjompen/PSSecretScanner/issues/11))
+- 2022-07-26
+  - Moved GetConfig to external helper function in order to make Find-Secret easier to write tests for. ([#11](https://github.com/bjompen/PSSecretScanner/issues/11))
+- 2022-07-24
+  - Added a pattern for personal access token
+  - Added tests for regex patterns (some, not all of them) ([#11](https://github.com/bjompen/PSSecretScanner/issues/11))
+  - Added unit tests for some functions (WIP) ([#11](https://github.com/bjompen/PSSecretScanner/issues/11))
+  - Added the logo, becuse it's fun to draw stuff.
+- 1.0.7, 2022-07-22
+  - This is the first changelog entry so anything before this is without dates. ([#5](https://github.com/bjompen/PSSecretScanner/issues/5))
+  - Refactored the module to a folder structure. ([#10](https://github.com/bjompen/PSSecretScanner/issues/10))
+  - Added build script (Invoke-Build)
+  - Changed from comment based to markdown documentation ([#7](https://github.com/bjompen/PSSecretScanner/issues/7))
+- 1.0.6
+  - Full support for PS 5.1 and later.
+- 1.0.5
+  - Some messing about with PS7 support
+- 1.0.4
+  - Added 24 patterns from the h33tlit list
+- 1.0.(1..3)
+  - Added and changed some patterns and added some functionality
+- 1.0.0
+  - First release. Basically a wrapper around `Select-String` with a .txt file of OWASP patterns.
