@@ -9,7 +9,7 @@ function Find-Secret {
         [string[]]$Filetype,
 
         [Parameter(ParameterSetName = 'Path')]
-        [bool]$Recursive = $true,
+        [switch]$NoRecurse,
         
         [Parameter(ParameterSetName = 'File', Position = 0)]
         [ValidateScript({ AssertParameter -ScriptBlock {Test-Path $_} -ErrorMessage "File not found." })]
@@ -24,6 +24,8 @@ function Find-Secret {
     )
 
     $Config = GetConfig -ConfigPath $ConfigPath
+
+    [bool]$Recursive = -not $NoRecurse
 
     switch ($PSCmdLet.ParameterSetName) {
         'Path' { 
