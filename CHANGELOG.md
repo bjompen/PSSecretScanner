@@ -1,5 +1,8 @@
 # Changelog
 
+- 2022-10-26 - 2.0.1
+  - Fixed pattern bug where quantifiers were wrong
+  - Improved / simplified patterns (thank you [@mthreer](https://github.com/mthreer))
 - 2022-10-24 - 2.0.0
   - Added Types and output formating (thank you [@StartAutomating](https://github.com/StartAutomating))
   - Improved exclude list to support wildcards, relative paths, and more
