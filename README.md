@@ -20,7 +20,7 @@ Scan your code, files, folders, and repos for accidentily exposed secrets using 
 # Comments supported
 
 # Relative paths supported (starting with .\)
-# NOTE! Relative paths are calculated _relative to the excludelist path.
+# NOTE! Relative paths are calculated _relative_ to the excludelist path.
 # If this file is located in c:\mypath\.ignoresecrets
 .\Docs\Help\Find-Secret.md
 .\Source\config.json
