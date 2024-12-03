@@ -52,7 +52,7 @@ Ex.
 
 >    "C:\MyFiles\\*"
 
-Relativ paths are also supported (relative to the ignorefile)
+Relative paths are also supported (relative to the ignorefile)
 
 >    ".\MySubFolder\\*"
 
