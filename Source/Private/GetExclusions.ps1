@@ -11,18 +11,23 @@ function GetExclusions {
 
         # Normalize path
         $eObj.Path = $eObj.Path -replace '[\\\/]', [IO.Path]::DirectorySeparatorChar
-        
+
         if ($eObj.Path -match '^\..*') {
             # Path starts with '.', is relative. Replace with root folder
-            $BasePath = split-path (Resolve-Path $Excludelist).Path 
-            $eobj.Path = $eobj.Path -replace '^\.', $BasePath
+            $BasePath = split-path (Resolve-Path $Excludelist).Path
+            try {
+                $eobj.Path = Resolve-Path ($eobj.Path -replace '^\.', $BasePath) -ErrorAction Stop
+            }
+            catch {
+                Write-Warning "Failed to resolve path '$($eObj.Path)'. Exclusion will be skipped. $_"
+            }
         }
 
         if ([string]::IsNullOrEmpty($eObj.LineNumber) -and [string]::IsNullOrEmpty($eObj.Line)) {
             # Path or fileexclusion
             if ($eObj.Path -match '.*\\\*$') {
                 # Full path excluded
-                Get-ChildItem -Path $eObj.Path -Recurse -File -ErrorAction SilentlyContinue | ForEach-Object { 
+                Get-ChildItem -Path $eObj.Path -Recurse -File -ErrorAction SilentlyContinue | ForEach-Object {
                     $ExcludeResults.Add(@{
                         StringValue = $_.FullName
                         Type = 'File'
