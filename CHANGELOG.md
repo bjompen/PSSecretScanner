@@ -1,6 +1,10 @@
 # Changelog
 
 - 2022-10-26 - 2.0.1
+  - New pattern for OAuth token parameter query string
+  - Bugfix relative paths
+  thank you [@autosysops](https://github.com/autosysops)
+- 2022-10-26 - 2.0.1
   - Fixed pattern bug where quantifiers were wrong
   - Improved / simplified patterns (thank you [@mthreer](https://github.com/mthreer))
 - 2022-10-24 - 2.0.0
