@@ -4536,11 +4536,35 @@
       "ShouldMatch": false
     },
     {
-      "Pattern": "client_id=12345678-abcd-efab-1234-fedcba9876543210&client_secret=aTqdK]HpZIRV^RtBjtCNVkCmhyCj@LAmc[kQ]k^K&grant_type=client_credentials&scope=https://test.onmicrosoft.com/test/.default",
+      "Pattern": "client_id=12345678-abcd-efab-1234-fedcba9876543210&client_secret=Bb2Cc~3Dd4.-Ee5Ff6Gg7Hh8Ii9Jj0_Kk1Ll2Mm3&grant_type=client_credentials&scope=https://test.onmicrosoft.com/test/.default",
       "ShouldMatch": true
     },
     {
-      "Pattern": "client_id=12345678-abcd-efab-1234-fedcba9876543210&grant_type=client_credentials&client_secret=aTqdK]HpZIRV^RtBjtCNVkCmhyCj@LAmc[kQ]k^K&scope=https://test.onmicrosoft.com/test/.default",
+      "Pattern": "client_id=12345678-abcd-efab-1234-fedcba9876543210&grant_type=client_credentials&client_secret=Bb2Cc~3Dd4.-Ee5Ff6Gg7Hh8Ii9Jj0_Kk1Ll2Mm3&scope=https://test.onmicrosoft.com/test/.default",
       "ShouldMatch": true
+    },
+    {
+      "Pattern": "client_id=12345678-abcd-efab-1234-fedcba9876543210&grant_type=client_credentials&client_secret=@{parameters('test')}&scope=https://test.onmicrosoft.com/test/.default",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "client_id=12345678-abcd-efab-1234-fedcba9876543210&client_secret=@{parameters('test')}&grant_type=client_credentials&scope=https://test.onmicrosoft.com/test/.default",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "client_id=12345678-abcd-efab-1234-fedcba9876543210&grant_type=client_credentials&client_secret=$(secret)&scope=https://test.onmicrosoft.com/test/.default",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "client_id=12345678-abcd-efab-1234-fedcba9876543210&client_secret=$(secret)&grant_type=client_credentials&scope=https://test.onmicrosoft.com/test/.default",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "client_id=12345678-abcd-efab-1234-fedcba9876543210&grant_type=client_credentials&client_secret=$secret&scope=https://test.onmicrosoft.com/test/.default",
+      "ShouldMatch": false
+    },
+    {
+      "Pattern": "client_id=12345678-abcd-efab-1234-fedcba9876543210&client_secret=$secret&grant_type=client_credentials&scope=https://test.onmicrosoft.com/test/.default",
+      "ShouldMatch": false
     }
 ]

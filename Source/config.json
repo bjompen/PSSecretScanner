@@ -53,7 +53,7 @@
     {"_Twilio_API_Key":"SK[0-9a-fA-F]{32}"},
     {"_Twitter_Access_Token":"(?i)twitter.*[1-9][0-9]+-[0-9a-z]{40}"},
     {"_Twitter_OAuth":"(?i)twitter.*['|\"][0-9a-z]{35,44}['|\"]"},
-    {"_OAuth_Request_Parameters":"(?i)(?=.*(^|[&?\\s])grant_type\\s*=\\s*client_credentials)(?=.*(^|[&?\\s])client_secret\\s*=\\s*[^&\\s'\"]+)"}
+    {"_OAuth_Request_Parameters":"(?is)(?=.*(?:^|[&?\\s]|%26)grant_type\\s*(?:=|%3D)\\s*client_credentials(?:$|[&\\s]|%26))(?=.*(?:^|[&?\\s]|%26)client_secret\\s*(?:=|%3D)\\s*(?:[A-Za-z0-9._~-]|%[0-9A-Fa-f]{2}){40}(?=$|[&\\s'\\\"]|%26))"}
   ],
   "fileextensions":[
       ".ps1",
@@ -68,5 +68,3 @@
       ""
   ]
 }
-
-
